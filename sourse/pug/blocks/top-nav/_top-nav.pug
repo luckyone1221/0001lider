@@ -14,9 +14,15 @@ mixin mob-mnu()
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
-		
-			+mnu()
-			.text-right
+			a.logo-link(href="/")
+				img.logo-link-img(src="img/logo.svg")
+			+mnu2()
+			.phone-col
+				a.phone-link(href="tel:+8-831-410-40-60")
+					.phone-img-cont
+						img.phone-img(src="img/phone-header.svg" alt="")
+					.phone-number 8 (831) 410-40-60
+				.left-order-btn.btn.btn-primary(href="#") Оставить заявку
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav

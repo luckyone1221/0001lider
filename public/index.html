@@ -20,41 +20,45 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<!--rangle slider css-->
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
+		<!--slect2-->
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
-			<div class="toggle-menu-mobile toggle-menu-mobile--js d-lg-none"><span></span>
-			</div>
-			<div class="menu-mobile menu-mobile--js d-lg-none">
-				<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
-				</div>
-				<div class="menu-mobile__inner">
-					<ul class="menu-mobile__nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="/" itemprop="url">Главная</a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Услуги  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Подбор септика   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Акции </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> О компании  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Доставка и оплата </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Клиентам  </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url"> Наши работы   </a>
-						</li>
-						<li class="menu-mobile__item" itemprop="item"><a class="menu-mobile__link" href="#" itemprop="url">Контакты </a>
-						</li>
+			<!-- start header-->
+			<header class="header" id="header"><a class="header__logo-link" href="/"><img class="header__logo-link-img" src="img/logo.svg" alt="" role="presentation"/></a>
+				<div class="header__menu-col d-none d-lg-flex">
+					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+						<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
 					</ul>
-					<div class="text-right"></div>
+				</div>
+				<div class="header__phone-col d-none d-lg-flex"><a class="header__phone-link" href="tel:+8-831-410-40-60"><span class="header__phone-img-cont"><img class="header__phone-img" src="img/phone-header.svg" alt="" role="presentation"/></span><span class="header__phone-number">8 (831) 410-40-60</span></a><a class="header__left-order-btn btn btn-primary" href="#">Оставить заявку</a>
+				</div>
+				<div class="header__burger-cont d-flex d-lg-none"><span></span>
+				</div>
+			</header>
+			<div class="mob-menu-cont">
+				<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+					<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+				</ul>
+				<div class="mob-menu-cont__lower-calls-bl"><a class="mob-menu-cont__phone-link" href="tel:+8-831-410-40-60"><span class="mob-menu-cont__phone-img-cont"><img class="mob-menu-cont__phone-img" src="img/phone-header.svg" alt="" role="presentation"/></span><span class="mob-menu-cont__phone-number">8 (831) 410-40-60</span></a><a class="mob-menu-cont__left-order-btn" href="#">Оставить заявку</a>
 				</div>
 			</div>
-			<!--  мобильное меню-->
+			<!-- end header-->
 			<!-- start headerBlock-->
 			<div class="headerBlock section" id="headerBlock">
 				<div class="container">
@@ -87,7 +91,42 @@
 			<!-- end sContact-->
 			<footer class="footer block-with-lazy">
 				<div class="container">
-					<h2>footer</h2>
+					<div class="footer__main-footer-row row">
+						<div class="footer__logo-col col-md-6 col-lg-3"><a class="footer__logo-link" href="/"><img src="img/logo-for-black-bg.svg" alt=""/></a>
+							<p class="footer__after-logo-txt">ООО “Лидер ПрофСтрой”
+							</p>
+						</div>
+						<div class="footer__menu-col col-md-6 col-lg-3">
+							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+								<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Карта домов</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">О компании</a></li>
+							</ul>
+						</div>
+						<div class="footer__iconed-col col-md-6 col-lg-3">
+							<p class="footer__iconed-col-headline">Адрес и график работы:
+							</p><a class="footer__iconed-col-item" href="#">
+							<div class="img-box"><img src="img/location-footer.svg" alt=""/></div><span>Нижний Новгород, ул. Героев 45</span></a>
+							<div class="footer__iconed-col-item">
+								<div class="img-box"><img src="img/small-white-clock.svg" alt=""/></div><span>Пн - Пт: 9:00 - 18:00</span>
+							</div>
+						</div>
+						<div class="footer__iconed-col our-contacts col-md-6 col-lg-3">
+							<p class="footer__iconed-col-headline">Наши контакты:
+							</p><a class="footer__iconed-col-item" href="tel:+8-831-410-40-60">
+							<div class="img-box"><img src="img/phone-footer.svg" alt=""/></div><span>8 (831) 410-40-60</span></a><a class="footer__iconed-col-item" href="mailto:example@mail.com">
+							<div class="img-box"><img src="img/mail-icon.svg" alt=""/></div><span>example@mail.com</span></a>
+						</div>
+					</div>
+					<div class="footer__lower-links-box row"><a class="footer__lower-link-item privacy-policy-link col-md-4" href="#">Политика конфидециальности</a>
+						<div class="footer__lower-link-item all-rights-reserved col-md-4">Все права защищены. 2020.
+						</div><a class="footer__lower-link-item made-by col-md-4" href="#"><span>Разработано в</span><span>ADHEADS</span></a>
+					</div>
 				</div>
 			</footer>
 		</div>
@@ -136,6 +175,10 @@
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<!--range slider js-->
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+		<!--select2-->
+		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>
 </html>

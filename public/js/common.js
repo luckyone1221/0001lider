@@ -96,7 +96,89 @@ var JSCCommon = {
 			$(this).addClass('active').siblings().removeClass('active').closest('.' + tab).find('.' + tab + '__content').hide().removeClass('active').eq($(this).index()).show().addClass('active');
 		});
 	},
-	// /табы  
+	// /табы
+	//taken from good planet
+	customRange: function customRange() {
+		$(".range-wrap").each(function () {
+			var _this = $(this);
+
+			var self = this;
+
+			var $d3 = _this.find(".slider-js");
+
+			var slider = $d3.ionRangeSlider({
+				skin: "round",
+				type: "double",
+				grid: false,
+				grid_snap: false,
+				hide_min_max: true,
+				hide_from_to: true,
+				onStart: function onStart(data) {
+					self.closest('.range-inp-cont').querySelector('.lower-num').innerHTML = data.from;
+					self.closest('.range-inp-cont').querySelector('.upper-num').innerHTML = data.to;
+					self.closest('.range-inp-cont').querySelector('.from-inp').value = data.from;
+					self.closest('.range-inp-cont').querySelector('.to-inp').value = data.to; //_this.find('.minus').val(data.from);
+					//_this.find('.plus').val(data.to);
+				},
+				onChange: function onChange(data) {
+					self.closest('.range-inp-cont').querySelector('.lower-num').innerHTML = data.from;
+					self.closest('.range-inp-cont').querySelector('.upper-num').innerHTML = data.to;
+					self.closest('.range-inp-cont').querySelector('.from-inp').value = data.from;
+					self.closest('.range-inp-cont').querySelector('.to-inp').value = data.to;
+				},
+				onFinish: function onFinish(data) {
+					self.closest('.range-inp-cont').querySelector('.lower-num').innerHTML = data.from;
+					self.closest('.range-inp-cont').querySelector('.upper-num').innerHTML = data.to;
+					self.closest('.range-inp-cont').querySelector('.from-inp').value = data.from;
+					self.closest('.range-inp-cont').querySelector('.to-inp').value = data.to;
+				},
+				onUpdate: function onUpdate(data) {
+					self.closest('.range-inp-cont').querySelector('.lower-num').innerHTML = data.from;
+					self.closest('.range-inp-cont').querySelector('.upper-num').innerHTML = data.to;
+					self.closest('.range-inp-cont').querySelector('.from-inp').value = data.from;
+					self.closest('.range-inp-cont').querySelector('.to-inp').value = data.to;
+				}
+			});
+			var $d3_instance = slider.data("ionRangeSlider");
+			$(this).closest('.range-inp-cont').on('change  input  cut  copy  paste', '.from-inp', function () {
+				var th = $(this);
+				var data = th.val();
+				var min = +data;
+
+				if (data == '') {
+					return undefined;
+				}
+
+				$d3_instance.update({
+					from: min
+				});
+			});
+			$(this).closest('.range-inp-cont').on('change  input  cut  copy  paste', '.to-inp', function () {
+				var th = $(this);
+				var data = th.val();
+				var max = +data;
+
+				if (data == '') {
+					return undefined;
+				} //max => new val of max inp
+				//min => value of the min inp
+				//let min = Number(document.querySelector('.range-result.range-result--minus.minus').value);
+
+
+				var min = Number(this.closest('.range-inp-cont').querySelector('.from-inp').value);
+
+				if (min >= max) {
+					min = 0;
+				}
+
+				$d3_instance.update({
+					from: min,
+					to: max
+				});
+			});
+		});
+	},
+	//taken from good planet
 	inputMask: function inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -115,11 +197,12 @@ function eventHandler() {
 	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
-	JSCCommon.mobileMenu();
+	JSCCommon.customRange(); //JSCCommon.mobileMenu();
+
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -153,10 +236,9 @@ function eventHandler() {
 		}
 	}
 
-	$(window).resize(function () {
-		heightses();
-	});
-	heightses(); // листалка по стр
+	$(window).resize(function () {//heightses();
+	}); //heightses();
+	// листалка по стр
 
 	$(" .top-nav li a, .scroll-link").click(function () {
 		var elementClick = $(this).attr("href");
@@ -167,7 +249,7 @@ function eventHandler() {
 		return false;
 	});
 	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread({}, defaultSl, (_objectSpread2 = {
+	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
 		slidesPerView: 'auto',
 		watchOverflow: true,
 		spaceBetween: 0,
@@ -233,7 +315,39 @@ function eventHandler() {
 				// yaCounter55828534.reachGoal('zakaz');
 			}, 4000);
 		}).fail(function () {});
+	}); //my custom code
+	//custom mnu js
+
+	$('.header__burger-cont').click(function () {
+		$('.header__burger-cont').toggleClass('collapsed');
+		$('.mob-menu-cont').toggleClass('collapsed');
+		$('body').toggleClass('fixed-on-filter-js');
 	});
+	$(window).resize(function () {
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			$('.header__burger-cont').removeClass('collapsed');
+			$('.mob-menu-cont').removeClass('collapsed');
+		}
+	}); //selects
+
+	$('.custom-select2').select2({
+		minimumResultsForSearch: Infinity,
+		dropdownCssClass: "drop-down-full-grey"
+	});
+	$('.custom-select2-catalog-headline').select2({
+		minimumResultsForSearch: Infinity,
+		dropdownCssClass: "drop-down-catalog-header"
+	}); //for mob filter
+
+	$('.filters-block__filter-mob-bar').click(function () {
+		$('body').addClass('fixed-on-filter-js');
+		$('.filters-block__filter-box-container').addClass('active');
+	});
+	$('.form-wrap__cross-icon-cont').click(function () {
+		$('body').removeClass('fixed-on-filter-js');
+		$('.filters-block__filter-box-container').removeClass('active');
+	}); //
+
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

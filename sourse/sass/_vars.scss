@@ -8,6 +8,10 @@ $path1: '@1x/';
 // Color system 
 
 $white: #fff !default;
+$light-white: #FBFDFF;
+$border-container-color: #F2F2F2;
+$select-border-color: #efefef;
+$footer-gray: #AFBCC6;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
 $gray-300: #dee2e6 !default;
@@ -21,14 +25,14 @@ $black: #000 !default;
 
 $grays: () !default;
 
-
-$blue: #007bff !default;
+$light-blue: #7E97B0;
+$blue: #1b73b8 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
-$yellow: #ffc107 !default;
+$yellow: #ffb000 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
@@ -39,12 +43,13 @@ $colors: map-merge((), $colors);
 
 
 $primary: $blue !default;
-$secondary: $gray-600 !default;
+$secondary: #f8f8f8 !default;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
-$light: $gray-100 !default;
+$light: #ebebeb !default;
+$footer-light-dark: #505E69;
 $dark: $gray-800 !default;
 
 $theme-colors: () !default;
@@ -55,13 +60,13 @@ $theme-colors: map-merge(("primary": $primary,
     // "info":       $info,
     // "warning":    $warning,
     "danger": $danger,
-    // "light":      $light,
+    "light":      $light,
     // "dark":       $dark
   ),
   $theme-colors);
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: #283138 !default;
 
 // Typography
 //
@@ -97,7 +102,7 @@ $grid-breakpoints: (xs: 0,
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  // xxl: 1400px
+  xxl: 1500px
 ) !default;
 
 // Grid containers
@@ -108,7 +113,7 @@ $container-max-widths: (xs: 480px,
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
+  xl: 1170px,
   // xxl: 1340px
 ) !default;
 // Grid columns
@@ -137,12 +142,12 @@ $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.5 !default;
 
 // title 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 2 !default;
+$h1-font-size: rem(40) !default;
+$h2-font-size: $h1-font-size !default;
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
 $h5-font-size: $font-size-base * 1.25 !default;
-$h6-font-size: $font-size-base !default;
+$h6-font-size: rem(18) !default;
 
 
 $display1-size: 6rem !default;
@@ -183,7 +188,7 @@ $mark-bg: #fcf8e3 !default;
 
 // $hr-margin-y:                 $spacer !default;
 
-
+$border-radius: rem(3) !default;
 // Tables
 //
 // Customizes the `.table` component with basic values, each used across all table variations.
@@ -224,6 +229,7 @@ $table-border-level: -6 !default;
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
+//inp + btn
 $input-btn-padding-y: .375rem !default;
 $input-btn-padding-x: .75rem !default;
 $input-btn-font-family: null !default;

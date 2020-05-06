@@ -1,0 +1,222 @@
+mixin sCatalog()
+	// start sCatalog
+	.sCatalog.section#sCatalog&attributes(attributes)
+		block
+
+	// end sCatalog
+
+mixin filtersBlock()
+	+b.filters-block
+		+e.bordered-container-headline.container
+			h2 Каталог домов
+			p Подберите для себя решение, отвечающее вашим запросам
+		+e.filter-box-container.container
+			+form-wrap()
+				+e.mobile-controll-bl.d-flex.d-lg-none
+					+e.icon-txt
+						+icon('filter-svg')
+						span Фильтровать проекты
+					+e.cross-icon-cont
+						+icon('cross')
+				+e.inputs-box
+					.row
+						+e.input-col.col-12.col-lg-6.col-part-5-bigger
+							+rangeInp('Площадь, м2:', 'squre-from', 'square-to', '1', '900')
+						+e.input-col.col-12.col-lg-6.col-part-5-bigger
+							+rangeInp('Цена, млн.руб.:', 'price-from', 'price-to', '1', '14')
+						+e.input-col.col-12.col-lg-4.col-part-5
+							+b.select2-parent-cont
+								+filterSelect('floorSel', ['1 этаж', '2 этажа', '3 этажа', '4 этажа'])
+								+filterSelect('badroomsSel', ['1 спальня','2 спальни','3 спальни'], 'Число спален')
+						+e.input-col.col-12.col-lg-4.col-part-5
+							+b.select2-parent-cont
+								+filterSelect('floorSel', ['1 материал', '2 материала'], 'Материал')
+								+filterSelect('badroomsSel', ['1 стиль', '2 стиля'], 'Архитектурные стиль')
+						+e.input-col.col-12.col-lg-4.col-part-5
+							+b.select2-parent-cont
+								+filterSelect('floorSel', ['1 узел', '2 узла'], 'Количество с/узлов')
+								+filterSelect('badroomsSel', ['1 вкл', '2 вкл'], 'Включено в стоимость')
+				+e.button-box
+					+e.BUTTON.show-all-btn Показать все проекты
+					+e.BUTTON.discard-filters-btn
+						| Сбросить фильтр
+						+icon('cross')
+		+e.lower-strip-cont.container.d-none.d-lg-block
+		+e.filter-mob-bar.d-flex.d-lg-none
+			+icon('filter-svg')
+			span Фильтровать проекты
+
+
+mixin rangeInp(blockDescr,fromInpName, toInpName, fromRange, toRange)
+	+b.range-inp-cont
+		+e.inp-bl
+			+e.SPAN.inp-bl-descr=blockDescr
+			+e.inputs-container
+				+input('От')(class='from-inp' name=fromInpName)
+				+e.SPAN.separete-item
+				+input('До')(class='to-inp' name=toInpName)
+		+e.rang-bl
+			+range(fromRange, toRange)
+
+mixin range(c1, c2)
+	span.lower-num.minus 110
+	.range-wrap.price_slider_amount
+		input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+	span.upper-num.plus 999
+
+mixin filterSelect(selectName, optionsArr=['1', '2', '3'], placeholder='Этажность', keyClass='custom-select2')
+	select(name=selectName data-placeholder=placeholder class=keyClass)
+		option(value="")
+		- for (let item of optionsArr)
+			option(value=item)=item
+
+	//-catalog block mixins
+mixin catalogBlock(TableBtnClass, squareBtnClass)
+	+b.catalog-block
+		+e.inner-container.container
+			+e.sort-header
+				+form-wrap()
+					.row
+						.col
+							+e.col-headline-txt Сортировать проекты по:
+							+e.sort-for-row.row
+								+e.popular-select-bl.col-lg-4
+									span.select-description Популярности
+									+b.catalog-headline-select-parent
+										+filterSelect('catHeadPopular', ['1.1', '1.2', '1.3', '1.4'], 'к самым популярным', 'custom-select2-catalog-headline')
+								+e.popular-select-bl.col-lg-4
+									span.select-description Стоимости
+									+b.catalog-headline-select-parent
+										+filterSelect('catHeadPrice', ['2.1', '2.2', '2.3', '2.4'], 'от дешевых к дорогим', 'custom-select2-catalog-headline')
+								+e.popular-select-bl.col-lg-4
+									span.select-description Площади
+									+b.catalog-headline-select-parent
+										+filterSelect('catHeadSquare', ['3.1', '3.2', '3.3', '3.4'], 'от меньшей к большей', 'custom-select2-catalog-headline')
+						.col-auto.d-none.d-md-block
+							+e.col-headline-txt Вид:
+							+e.vue-link-box
+								+e.vue-link-item(href="#" class=TableBtnClass)
+									+icon('vue-link-table-item')
+								+e.vue-link-item(href="#" class=squareBtnClass)
+									+icon('vue-link-square-item')
+			+e.catalog-items-bl
+				block
+				+pugin()
+
+	//-catalog table -items
+mixin catalogTableItems(itemClasses)
+	.catalog-table-items-container(class=itemClasses)
+		+catalogTableItem()
+		+catalogTableItem('2')
+		+catalogTableItem('3')
+		+catalogTableItem('4')
+		+catalogTableItem('5')
+		+catalogTableItem('6')
+
+		+catalogTableItem('4')
+		+catalogTableItem('5')
+		+catalogTableItem('6')
+
+mixin catalogTableItem(imgNum='1')
+	+b.catalog-table-item
+		+e.A.img-block(href="#")
+			img.item-img(src=`img/@2x/catalog-table-${imgNum}.jpg` alt="")
+		+e.descr-block
+			+e.descr-header
+				+e.descr-header-txt-bl
+					span Новый дом с бассейном и собственным садом
+				+e.descr-location(href="#")
+					+icon('small-blue-location')
+					span Нижний Новгород
+			+e.P.after-header Современная планировка дома и качественные материалы при строительстве
+			+e.TABLE.features-table
+				tr
+					th
+						span Общая площадь:
+						span 223.5 м2
+					th
+						span Габариты:
+						span 14.4х11.0
+				tr
+					th
+						span Материал:
+						span Газобетон
+					th
+						span Стиль:
+						span Классика
+			+e.descr-with-icons-block
+				+e.descr-with-icon
+					+icon('small-blue-bad')
+					span 3 спальни
+				+e.descr-with-icon
+					+icon('small-blue-shower')
+					span 2 с/узла
+			+e.avaliable-options-list
+				+e.SPAN.avaliable-option-header Доступные опции:
+				+e.A.avaliable-option-link(href="#") Балкон
+				+e.A.avaliable-option-link(href="#") Терраса
+				+e.A.avaliable-option-link(href="#") Мансардные окна
+			+e.price-and-info-bl.row
+				+e.price-col.col-auto
+					span.price-txt Цена:
+					span.price-value 3 520 500 рублей
+				+e.show-more-col.col
+					+e.A.show-more(href="#")
+						.inner-cont
+							span Подробнее о проекте
+							+icon('small-blue-arrow-right')
+	//-end catalog table -items
+	//-catalog square -items
+mixin catalogSquareItems(itemClasses)
+	.catalog-square-items-container.row(class=itemClasses)
+			+catalogSuareItem()
+			+catalogSuareItem()
+			+catalogSuareItem()
+			+catalogSuareItem()
+			+catalogSuareItem()
+			+catalogSuareItem()
+
+mixin catalogSuareItem()
+	+b.catalog-square-item.col-sm-6.col-lg-4
+		+e.content
+			+e.A.img-part(href="#")
+				img.house-img(src="img/@2x/catalog-table-1.jpg" alt="")
+			+e.content-part
+				+e.A.location-link(href='#')
+					+icon('small-blue-location')
+					span Нижний Новгород
+				+e.card-header 2-х этажный котедж с гаражем
+				+e.P.card-descr-par Современная планировка дома и качественные материалы при строительстве
+				+e.advantage-pills-list
+					li.advantage-item
+						span Общая площадь:
+						span 223.5 м2
+					li.advantage-item
+						span Габариты:
+						span 14.4х11.0
+					li.advantage-item
+						span Материал:
+						span Газобетон
+					li.advantage-item
+						span Стиль:
+						span Классика
+				+e.descr-with-icons-block
+					+e.descr-with-icon
+						+icon('small-blue-bad')
+						span 3 спальни
+					+e.descr-with-icon
+						+icon('small-blue-shower')
+						span 2 с/узла
+				+e.avaliable-options-list
+					+e.SPAN.avaliable-option-header Доступные опции:
+					+e.A.avaliable-option-link(href="#") Балкон
+					+e.A.avaliable-option-link(href="#") Терраса
+					+e.A.avaliable-option-link(href="#") Мансардные окна
+				+e.price-bl
+					span.price-txt Цена:
+					span.price-value 3 520 500
+					span.price-money-txt рублей
+				+e.A.show-more(href="#")
+					.inner-cont
+						span Подробнее о проекте
+						+icon('small-blue-arrow-right')

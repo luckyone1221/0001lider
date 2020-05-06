@@ -25,30 +25,6 @@ mixin breadcrumb(...items)
 		
 //- pugination
 mixin pugin()
-	//- nav(aria-label='...')
-	//- 	ul.pagination.justify-content-center
-	//- 		li.page-item.disabled
-	//- 			a.page-link(href='#', tabindex='-1') 
-	//- 				i(class="fas fa-chevron-left")
-	//- 		li.page-item.disabled
-	//- 			a.page-link.d-none.d-md-block(href='#', tabindex='-1') Назад
-
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 1
-	//- 		li.page-item.active
-	//- 			a.page-link(href='#')
-	//- 				| 2 
-	//- 				span.sr-only (current)
-	//- 		li.page-item
-	//- 			a.page-link.page-link-more(href='#') ...
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 3
-
-	//- 		li.page-item
-	//- 			a.page-link.d-none.d-md-block(href='#') Дальше
-	//- 		li.page-item
-	//- 			a.page-link(href='#') 
-	//- 				i(class="fas fa-chevron-right")
 	.pagination-wrapper
 		ul.page-numbers
 			mixin li(n)
@@ -59,20 +35,16 @@ mixin pugin()
 						block
 			+li()
 				span.prev.page-numbers( )
-					img(src="img/svg/prev.svg", alt="")
-			+li()
-				span.prev.page-numbers( )
-					img(src="img/svg/prev-double.svg", alt="")
+					+icon('angle-left')
+					//-img(src="img/svg/angle-left.svg", alt="")
 			+li()
 				span.page-numbers.current  1
-			- for (var x = 1; x < 5; x++)
+			- for (var x = 2; x < 5; x++)
 				+li(x)
 			+li()
 				a.next.page-numbers(href='#')
-					img(src="img/svg/next.svg", alt="")
-			+li()
-				a.next.page-numbers(href='#')
-					img(src="img/svg/next-double.svg", alt="")
+					+icon('angle-right')
+					//-img(src="img/svg/angle-right.svg", alt="")
 //- +pugin()
 //- /pugination
 //- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
@@ -105,44 +77,70 @@ mixin soc()
 mixin mnu()
 	-
 		var nav= { 
-			"Наши работы":"#",
-			"Цены":"#",
+			"Главная":"#",
 			"Калькулятор":"#",
-			"Акции":"#" ,
-			"Заказать":"#",
+			"Каталог домов":"#",
+			"Услуги":"#" ,
+			"Отзывы":"#",
+			"Контакты":"#",
 			}
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		li.menu-item.menu-item-has-children
-			a(href="#" itemprop="url") О нас
-			ul.sub-menu
-				-
-					var subnav= { 
-						"Строительство загородных домов":"#",
-						"Отделка загородных домов":"#",
-						"Покраска деревянных домов":"#",
-						"Штукатурные фасады загородных домов":"#" ,
-						}
-				each sublinkPatch, sublinkName in nav
-					li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
 		each linkPatch, linkName in nav
 			li.menu-item(itemprop="item" ): a(href= linkPatch itemprop="url")= linkName
+//- wp menu2
+mixin mnu2()
+	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		+mnuItem2('Главная', '', '/')
+		+mnuItem2('Калькулятор')
+		+mnuItem2('Каталог домов', 'current-menu-item')
+		+mnuItem2('Услуги')
+		+mnuItem2('Отзывы')
+		+mnuItem2('Контакты')
 
+mixin mnu2Footer()
+	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		+mnuItem2('Главная', '', '/')
+		+mnuItem2('Калькулятор')
+		+mnuItem2('Каталог домов', 'current-menu-item')
+		+mnuItem2('Услуги')
+		+mnuItem2('Отзывы')
+		+mnuItem2('Контакты')
+		+mnuItem2('Карта домов')
+		+mnuItem2('О компании')
+
+mixin mnuItem2(linkName, mnuItemClasses="", linkPatch="#")
+	li.menu-item(itemprop="item" class= mnuItemClasses)
+		a(href= linkPatch itemprop="url")= linkName
 //- menu
-mixin mnu()
-	-
-		var nav= {
-			"Главная":"/",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#"," О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#"
-			}
-	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		each linkPatch, linkName in nav
-			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+	li.menu-item.menu-item-has-children
+		a(href="#" itemprop="url") О нас
+		ul.sub-menu
+			-
+				var subnav= {
+					"Строительство загородных домов":"#",
+					"Отделка загородных домов":"#",
+					"Покраска деревянных домов":"#",
+					"Штукатурные фасады загородных домов":"#" ,
+					}
+			each sublinkPatch, sublinkName in nav
+				li.menu-item(itemprop="item" ): a(href= sublinkPatch itemprop="url")= sublinkName
+
+
+	mixin mnu()
+		-
+			var nav= {
+				"Главная":"/",
+				"Услуги  ":"#",
+				"Подбор септика   ":"#",
+				"Акции ":"#"," О компании  ":"#",
+				" Доставка и оплата ":"#",
+				" Клиентам  ":"#",
+				" Наши работы   ":"#",
+				"Контакты ":"#"
+				}
+		+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
+			each linkPatch, linkName in nav
+				+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
 //- /menu
 
 

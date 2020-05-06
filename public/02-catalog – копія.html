@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>02-catalog</title>
+		<meta name="description" content="о чем страница">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
+		<link rel="shortcut icon" type="image/png" href="img/favicon/favicon.png"><meta name="format-detection" content="telephone=no">
+		<link rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="content">
+		<meta property="og:title" content="content">
+		<meta property="og:description" content="content">
+		<meta property="og:url" content="content">
+		<meta property="og:locale" content="ru_RU">
+		<meta property="og:image" content="path/to/image.jpg">
+		<meta property="og:image:width" content="968">
+		<meta property="og:image:height" content="504">
+		<!-- Custom Browsers Color-->
+		<meta name="theme-color" content="#3361d8">
+		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<!--rangle slider css-->
+		<link rel="stylesheet" href="libs/ion-rangeslider/css/ion.rangeSlider.min.css"/>
+		<!--slect2-->
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
+		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="css/main.min.css"/>
+	</head>
+	<body class="page-has-fiter-bar"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+		<div class="main-wrapper">
+			<!-- start header-->
+			<header class="header" id="header"><a class="header__logo-link" href="/"><img class="header__logo-link-img" src="img/logo.svg" alt="" role="presentation"/></a>
+				<div class="header__menu-col d-none d-lg-flex">
+					<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+						<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+						<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+						<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="header__phone-col d-none d-lg-flex"><a class="header__phone-link" href="tel:+8-831-410-40-60"><span class="header__phone-img-cont"><img class="header__phone-img" src="img/phone-header.svg" alt="" role="presentation"/></span><span class="header__phone-number">8 (831) 410-40-60</span></a><a class="header__left-order-btn btn btn-primary" href="#">Оставить заявку</a>
+				</div>
+				<div class="header__burger-cont d-flex d-lg-none"><span></span>
+				</div>
+			</header>
+			<div class="mob-menu-cont">
+				<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+					<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+					<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+					<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+				</ul>
+				<div class="mob-menu-cont__lower-calls-bl"><a class="mob-menu-cont__phone-link" href="tel:+8-831-410-40-60"><span class="mob-menu-cont__phone-img-cont"><img class="mob-menu-cont__phone-img" src="img/phone-header.svg" alt="" role="presentation"/></span><span class="mob-menu-cont__phone-number">8 (831) 410-40-60</span></a><a class="mob-menu-cont__left-order-btn" href="#">Оставить заявку</a>
+				</div>
+			</div>
+			<!-- end header-->
+			<!-- start sCatalog-->
+			<div class="sCatalog section" id="sCatalog">
+				<div class="filters-block">
+					<div class="filters-block__bordered-container-headline container">
+						<h2>Каталог домов</h2>
+						<p>Подберите для себя решение, отвечающее вашим запросам</p>
+					</div>
+					<div class="filters-block__filter-box-container container">
+						<div class="form-wrap">
+							<form>
+								<input type="hidden" name="example-input-field"/>
+								<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+								<input class="utm_source" type="hidden" name="utm_source"/>
+								<input class="utm_term" type="hidden" name="utm_term"/>
+								<input class="utm_medium" type="hidden" name="utm_medium"/>
+								<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+								<div class="form-wrap__mobile-controll-bl d-flex d-lg-none">
+									<div class="form-wrap__icon-txt">
+										<svg class="icon icon-filter-svg ">
+											<use xlink:href="img/svg/sprite.svg#filter-svg"></use>
+										</svg><span>Фильтровать проекты</span>
+									</div>
+									<div class="form-wrap__cross-icon-cont">
+										<svg class="icon icon-cross ">
+											<use xlink:href="img/svg/sprite.svg#cross"></use>
+										</svg>
+									</div>
+								</div>
+								<div class="form-wrap__inputs-box">
+									<div class="row">
+										<div class="form-wrap__input-col col-12 col-lg-6 col-part-5-bigger">
+											<div class="range-inp-cont">
+												<div class="range-inp-cont__inp-bl"><span class="range-inp-cont__inp-bl-descr">Площадь, м2:</span>
+													<div class="range-inp-cont__inputs-container">
+														<div class="range-inp-cont__input-wrap form-group"><input class="range-inp-cont__input form-control from-inp" type="text" placeholder="От" name="squre-from"/>
+														</div>
+														<!-- +e.input-wrap--><span class="range-inp-cont__separete-item"></span>
+														<div class="range-inp-cont__input-wrap form-group"><input class="range-inp-cont__input form-control to-inp" type="text" placeholder="До" name="square-to"/>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="range-inp-cont__rang-bl"><span class="lower-num minus">110</span>
+													<div class="range-wrap price_slider_amount">
+														<input class="range-slider slider-js" type="text" data-min="1" data-max="900"/>
+													</div><span class="upper-num plus">999</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-wrap__input-col col-12 col-lg-6 col-part-5-bigger">
+											<div class="range-inp-cont">
+												<div class="range-inp-cont__inp-bl"><span class="range-inp-cont__inp-bl-descr">Цена, млн.руб.:</span>
+													<div class="range-inp-cont__inputs-container">
+														<div class="range-inp-cont__input-wrap form-group"><input class="range-inp-cont__input form-control from-inp" type="text" placeholder="От" name="price-from"/>
+														</div>
+														<!-- +e.input-wrap--><span class="range-inp-cont__separete-item"></span>
+														<div class="range-inp-cont__input-wrap form-group"><input class="range-inp-cont__input form-control to-inp" type="text" placeholder="До" name="price-to"/>
+														</div>
+														<!-- +e.input-wrap-->
+													</div>
+												</div>
+												<div class="range-inp-cont__rang-bl"><span class="lower-num minus">110</span>
+													<div class="range-wrap price_slider_amount">
+														<input class="range-slider slider-js" type="text" data-min="1" data-max="14"/>
+													</div><span class="upper-num plus">999</span>
+												</div>
+											</div>
+										</div>
+										<div class="form-wrap__input-col col-12 col-lg-4 col-part-5">
+											<div class="select2-parent-cont">
+												<select class="custom-select2" name="floorSel" data-placeholder="Этажность">
+													<option value=""></option>
+													<option value="1 этаж">1 этаж</option>
+													<option value="2 этажа">2 этажа</option>
+													<option value="3 этажа">3 этажа</option>
+													<option value="4 этажа">4 этажа</option>
+												</select>
+												<select class="custom-select2" name="badroomsSel" data-placeholder="Число спален">
+													<option value=""></option>
+													<option value="1 спальня">1 спальня</option>
+													<option value="2 спальни">2 спальни</option>
+													<option value="3 спальни">3 спальни</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-wrap__input-col col-12 col-lg-4 col-part-5">
+											<div class="select2-parent-cont">
+												<select class="custom-select2" name="floorSel" data-placeholder="Материал">
+													<option value=""></option>
+													<option value="1 материал">1 материал</option>
+													<option value="2 материала">2 материала</option>
+												</select>
+												<select class="custom-select2" name="badroomsSel" data-placeholder="Архитектурные стиль">
+													<option value=""></option>
+													<option value="1 стиль">1 стиль</option>
+													<option value="2 стиля">2 стиля</option>
+												</select>
+											</div>
+										</div>
+										<div class="form-wrap__input-col col-12 col-lg-4 col-part-5">
+											<div class="select2-parent-cont">
+												<select class="custom-select2" name="floorSel" data-placeholder="Количество с/узлов">
+													<option value=""></option>
+													<option value="1 узел">1 узел</option>
+													<option value="2 узла">2 узла</option>
+												</select>
+												<select class="custom-select2" name="badroomsSel" data-placeholder="Включено в стоимость">
+													<option value=""></option>
+													<option value="1 вкл">1 вкл</option>
+													<option value="2 вкл">2 вкл</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-wrap__button-box">
+									<button class="form-wrap__show-all-btn">Показать все проекты
+									</button>
+									<button class="form-wrap__discard-filters-btn">Сбросить фильтр
+										<svg class="icon icon-cross ">
+											<use xlink:href="img/svg/sprite.svg#cross"></use>
+										</svg>
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="filters-block__lower-strip-cont container d-none d-lg-block">
+					</div>
+					<div class="filters-block__filter-mob-bar d-flex d-lg-none">
+						<svg class="icon icon-filter-svg ">
+							<use xlink:href="img/svg/sprite.svg#filter-svg"></use>
+						</svg><span>Фильтровать проекты</span>
+					</div>
+				</div>
+				<div class="catalog-block">
+					<div class="catalog-block__inner-container container">
+						<div class="catalog-block__sort-header">
+							<div class="form-wrap">
+								<form>
+									<input type="hidden" name="example-input-field"/>
+									<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+									<input class="utm_source" type="hidden" name="utm_source"/>
+									<input class="utm_term" type="hidden" name="utm_term"/>
+									<input class="utm_medium" type="hidden" name="utm_medium"/>
+									<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+									<div class="row">
+										<div class="col">
+											<div class="form-wrap__col-headline-txt">Сортировать проекты по:
+											</div>
+											<div class="form-wrap__sort-for-row row">
+												<div class="form-wrap__popular-select-bl col-lg-4"><span class="select-description">Популярности</span>
+													<div class="catalog-headline-select-parent">
+														<select class="custom-select2-catalog-headline" name="catHeadPopular" data-placeholder="к самым популярным">
+															<option value=""></option>
+															<option value="1.1">1.1</option>
+															<option value="1.2">1.2</option>
+															<option value="1.3">1.3</option>
+															<option value="1.4">1.4</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-wrap__popular-select-bl col-lg-4"><span class="select-description">Стоимости</span>
+													<div class="catalog-headline-select-parent">
+														<select class="custom-select2-catalog-headline" name="catHeadPrice" data-placeholder="от дешевых к дорогим">
+															<option value=""></option>
+															<option value="2.1">2.1</option>
+															<option value="2.2">2.2</option>
+															<option value="2.3">2.3</option>
+															<option value="2.4">2.4</option>
+														</select>
+													</div>
+												</div>
+												<div class="form-wrap__popular-select-bl col-lg-4"><span class="select-description">Площади</span>
+													<div class="catalog-headline-select-parent">
+														<select class="custom-select2-catalog-headline" name="catHeadSquare" data-placeholder="от меньшей к большей">
+															<option value=""></option>
+															<option value="3.1">3.1</option>
+															<option value="3.2">3.2</option>
+															<option value="3.3">3.3</option>
+															<option value="3.4">3.4</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-auto d-none d-md-block">
+											<div class="form-wrap__col-headline-txt">Вид:
+											</div>
+											<div class="form-wrap__vue-link-box"><a class="form-wrap__vue-link-item active" href="#">
+												<svg class="icon icon-vue-link-table-item ">
+													<use xlink:href="img/svg/sprite.svg#vue-link-table-item"></use>
+												</svg></a><a class="form-wrap__vue-link-item" href="#">
+												<svg class="icon icon-vue-link-square-item ">
+													<use xlink:href="img/svg/sprite.svg#vue-link-square-item"></use>
+												</svg></a>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="catalog-block__catalog-items-bl">
+							<div class="catalog-table-items-container active">
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-2.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-3.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-4.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-5.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-6.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-4.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-5.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-table-item"><a class="catalog-table-item__img-block" href="#"><img class="item-img" src="img/@2x/catalog-table-6.jpg" alt=""/></a>
+									<div class="catalog-table-item__descr-block">
+										<div class="catalog-table-item__descr-header">
+											<div class="catalog-table-item__descr-header-txt-bl"><span>Новый дом с бассейном и собственным садом</span>
+											</div><a class="catalog-table-item__descr-location" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+										</div>
+										<p class="catalog-table-item__after-header">Современная планировка дома и качественные материалы при строительстве
+										</p>
+										<table class="catalog-table-item__features-table">
+											<tr>
+												<th><span>Общая площадь:</span><span>223.5 м2</span></th>
+												<th><span>Габариты:</span><span>14.4х11.0</span></th>
+											</tr>
+											<tr>
+												<th><span>Материал:</span><span>Газобетон</span></th>
+												<th><span>Стиль:</span><span>Классика</span></th>
+											</tr>
+										</table>
+										<div class="catalog-table-item__descr-with-icons-block">
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-bad ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+												</svg><span>3 спальни</span>
+											</div>
+											<div class="catalog-table-item__descr-with-icon">
+												<svg class="icon icon-small-blue-shower ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+												</svg><span>2 с/узла</span>
+											</div>
+										</div>
+										<div class="catalog-table-item__avaliable-options-list"><span class="catalog-table-item__avaliable-option-header">Доступные опции:</span><a class="catalog-table-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-table-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-table-item__avaliable-option-link" href="#">Мансардные окна</a>
+										</div>
+										<div class="catalog-table-item__price-and-info-bl row">
+											<div class="catalog-table-item__price-col col-auto"><span class="price-txt">Цена:</span><span class="price-value">3 520 500 рублей</span>
+											</div>
+											<div class="catalog-table-item__show-more-col col"><a class="catalog-table-item__show-more" href="#">
+												<div class="inner-cont"><span>Подробнее о проекте</span>
+													<svg class="icon icon-small-blue-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+													</svg>
+												</div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="catalog-square-items-container row">
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+								<div class="catalog-square-item col-sm-6 col-lg-4">
+									<div class="catalog-square-item__content"><a class="catalog-square-item__img-part" href="#"><img class="house-img" src="img/@2x/catalog-table-1.jpg" alt=""/></a>
+										<div class="catalog-square-item__content-part"><a class="catalog-square-item__location-link" href="#">
+											<svg class="icon icon-small-blue-location ">
+												<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+											</svg><span>Нижний Новгород</span></a>
+											<div class="catalog-square-item__card-header">2-х этажный котедж с гаражем
+											</div>
+											<p class="catalog-square-item__card-descr-par">Современная планировка дома и качественные материалы при строительстве
+											</p>
+											<div class="catalog-square-item__advantage-pills-list">
+												<li class="advantage-item"><span>Общая площадь:</span><span>223.5 м2</span></li>
+												<li class="advantage-item"><span>Габариты:</span><span>14.4х11.0</span></li>
+												<li class="advantage-item"><span>Материал:</span><span>Газобетон</span></li>
+												<li class="advantage-item"><span>Стиль:</span><span>Классика</span></li>
+											</div>
+											<div class="catalog-square-item__descr-with-icons-block">
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-bad ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+													</svg><span>3 спальни</span>
+												</div>
+												<div class="catalog-square-item__descr-with-icon">
+													<svg class="icon icon-small-blue-shower ">
+														<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+													</svg><span>2 с/узла</span>
+												</div>
+											</div>
+											<div class="catalog-square-item__avaliable-options-list"><span class="catalog-square-item__avaliable-option-header">Доступные опции:</span><a class="catalog-square-item__avaliable-option-link" href="#">Балкон</a><a class="catalog-square-item__avaliable-option-link" href="#">Терраса</a><a class="catalog-square-item__avaliable-option-link" href="#">Мансардные окна</a>
+											</div>
+											<div class="catalog-square-item__price-bl"><span class="price-txt">Цена:</span><span class="price-value">3 520 500</span><span class="price-money-txt">рублей</span>
+											</div><a class="catalog-square-item__show-more" href="#">
+											<div class="inner-cont"><span>Подробнее о проекте</span>
+												<svg class="icon icon-small-blue-arrow-right ">
+													<use xlink:href="img/svg/sprite.svg#small-blue-arrow-right"></use>
+												</svg>
+											</div></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pagination-wrapper">
+								<ul class="page-numbers">
+											<li><span class="prev page-numbers">
+													<svg class="icon icon-angle-left ">
+														<use xlink:href="img/svg/sprite.svg#angle-left"></use>
+													</svg></span>
+											</li>
+											<li><span class="page-numbers current"> 1</span>
+											</li>
+											<li><a class="page-numbers" href="#">2</a>
+											</li>
+											<li><a class="page-numbers" href="#">3</a>
+											</li>
+											<li><a class="page-numbers" href="#">4</a>
+											</li>
+											<li><a class="next page-numbers" href="#">
+													<svg class="icon icon-angle-right ">
+														<use xlink:href="img/svg/sprite.svg#angle-right"></use>
+													</svg></a>
+											</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end sCatalog-->
+			<!-- start sMap-->
+			<div class="sMap" id="sMap"><iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A6b422557a0b84a1e0b7d340c6e499a6a26494033f9d4972298751878ff8da093&amp;source=constructor" width="1280" height="720" frameborder="0"></iframe>
+			</div>
+			<!-- end sMap-->
+			<footer class="footer block-with-lazy">
+				<div class="container">
+					<div class="footer__main-footer-row row">
+						<div class="footer__logo-col col-md-6 col-lg-3"><a class="footer__logo-link" href="/"><img src="img/logo-for-black-bg.svg" alt=""/></a>
+							<p class="footer__after-logo-txt">ООО “Лидер ПрофСтрой”
+							</p>
+						</div>
+						<div class="footer__menu-col col-md-6 col-lg-3">
+							<ul class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="menu-item" itemprop="item"><a href="/" itemprop="url">Главная</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Калькулятор</a></li>
+								<li class="menu-item current-menu-item" itemprop="item"><a href="#" itemprop="url">Каталог домов</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Услуги</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Отзывы</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Контакты</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">Карта домов</a></li>
+								<li class="menu-item" itemprop="item"><a href="#" itemprop="url">О компании</a></li>
+							</ul>
+						</div>
+						<div class="footer__iconed-col col-md-6 col-lg-3">
+							<p class="footer__iconed-col-headline">Адрес и график работы:
+							</p><a class="footer__iconed-col-item" href="#">
+							<div class="img-box"><img src="img/location-footer.svg" alt=""/></div><span>Нижний Новгород, ул. Героев 45</span></a>
+							<div class="footer__iconed-col-item">
+								<div class="img-box"><img src="img/small-white-clock.svg" alt=""/></div><span>Пн - Пт: 9:00 - 18:00</span>
+							</div>
+						</div>
+						<div class="footer__iconed-col our-contacts col-md-6 col-lg-3">
+							<p class="footer__iconed-col-headline">Наши контакты:
+							</p><a class="footer__iconed-col-item" href="tel:+8-831-410-40-60">
+							<div class="img-box"><img src="img/phone-footer.svg" alt=""/></div><span>8 (831) 410-40-60</span></a><a class="footer__iconed-col-item" href="mailto:example@mail.com">
+							<div class="img-box"><img src="img/mail-icon.svg" alt=""/></div><span>example@mail.com</span></a>
+						</div>
+					</div>
+					<div class="footer__lower-links-box row"><a class="footer__lower-link-item privacy-policy-link col-md-4" href="#">Политика конфидециальности</a>
+						<div class="footer__lower-link-item all-rights-reserved col-md-4">Все права защищены. 2020.
+						</div><a class="footer__lower-link-item made-by col-md-4" href="#"><span>Разработано в</span><span>ADHEADS</span></a>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div class="d-none">
+			<div class="form-wrap modal-win modal-form" id="modal-call">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="text-center">
+						<div class="form-wrap__title h3 ttu">Обратный звонок
+						</div>
+						<p>Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течении 15&nbsp;минут</p>
+					</div>
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="Ваше Имя" name="text" required="required"/> 
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="tel" placeholder="Ваш телефон" name="tel" required="required"/>
+					</div>
+					<!-- +e.input-wrap--><input class="form-wrap__btn" type="submit" value="Рассчитать"/>
+					<div class="form-wrap__polite">
+						<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text text-secondary">Согласен на обработку и хранение моих персональных данных в соответствии с условиями</small>
+						</label>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-call-->
+		</div>
+		<!-- modal-->
+		<script src="js/lazy.js"></script>
+		<script src="libs/jquery/jquery.min.js"></script>
+		<!-- полифил для picture-->
+		<script src="libs/picturefill/picturefill.min.js"></script>
+		<!-- полифил для object-fit-->
+		<script src="libs/object-fit-images/ofi.min.js"></script>
+		<!-- modal libs-->
+		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
+		<!-- modal libs-->
+		<!-- slider libs-->
+		<script src="libs/swiper/js/swiper.min.js"></script>
+		<!-- /slider libs-->
+		<!-- for svg libs-->
+		<script src="libs/svg4everybody/svg4everybody.min.js"></script>
+		<!-- /for svg libs-->
+		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
+		<!--range slider js-->
+		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+		<!--select2-->
+		<script src="libs/select2/js/select2.full.min.js"></script>
+		<script src="js/common.js"></script>
+	</body>
+</html>
