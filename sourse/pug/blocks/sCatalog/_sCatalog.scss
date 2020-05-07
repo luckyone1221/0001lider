@@ -169,8 +169,9 @@
 			left: -15px;
 			width: calc(100% + 30px);
 
-			font-size: rem(14);
+			font-size: 16px;
 			@include media-breakpoint-up(lg){
+				font-size: rem(14);
 				position: static;
 				height: rem(52);
 				line-height: rem(50);
