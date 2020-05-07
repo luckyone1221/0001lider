@@ -1,0 +1,48 @@
+mixin sProductCard()
+	// start sProductCard
+	+b.SECTION.sProductCard.section#sProductCard&attributes(attributes)
+		+e.bordered-container-headline.container
+			block
+			+e.turn-back-btn
+				+icon('angle-left')
+				span Вернуться назад
+			h1 Проект дома Атлас-10
+		+e.house-chars-header.container
+			+e.chars-header-content
+				span.chars-header-headline Общие характеристики:
+				ul.chars-pills-list
+					li
+						span Общая площадь:
+						span 223.5 м2
+					li
+						span Габариты:
+						span 14.4х11.0
+					li
+						span Материал:
+						span Газобетон
+					li
+						span Стиль:
+						span Классика
+			+e.build-time-baner
+				.iconed-line
+					+icon('check-calendar')
+					span.light-txt Срок строительства:
+				span.time-txt-from от
+				span.time-txt-days 150 дней
+		+e.blue-strip.container
+			p.headline-txt В проекте предусмотренно:
+			ul.pills-list
+				li.pill-item
+					+icon('small-blue-bad')
+					span.pill-txt 3 спальни
+				li.pill-item
+					+icon('small-white-window')
+					span.pill-txt 2 балкона
+				li.pill-item
+					+icon('small-blue-shower')
+					span.pill-txt 2 с/узла
+				li.pill-item
+					+icon('small-white-umbrella')
+					span.pill-txt Терраса
+
+	// end sProductCard

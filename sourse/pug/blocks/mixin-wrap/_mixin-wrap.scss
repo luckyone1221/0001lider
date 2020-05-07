@@ -34,3 +34,34 @@
 	}
 }
 
+//breadcrumbs
+
+.breadcrumb-slider-js-prod-card03{
+ padding-bottom: rem(18);
+
+ .breadcrumb {
+	 background-color: transparent;
+	 //background-color: red;
+	 display: flex;
+	 flex-wrap: nowrap;
+	 padding: 0 0 0 0;
+ }
+
+ .breadcrumb-item {
+	 width: auto;
+	 //padding-right: 30px;
+	 a {
+		 font-weight: normal;
+		 line-height: rem(22px);
+		 font-size: rem(16px);
+		 color: $warning;
+	 }
+
+	 &.active {
+		 a {
+			 color: $breadcrumb-gray;
+			 pointer-events: none;
+		 }
+	 }
+ }
+}

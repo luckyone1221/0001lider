@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>title</title>
+		<title>03-product-card</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<body class="page-has-fiter-bar"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<!-- start header-->
 			<header class="header" id="header">
@@ -61,36 +61,79 @@
 				</div>
 			</div>
 			<!-- end header-->
-			<!-- start headerBlock-->
-			<div class="headerBlock section" id="headerBlock">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>headerBlock ds dfsdfdsfsd</h2>
+			<!-- start sProductCard-->
+			<section class="sProductCard section" id="sProductCard">
+				<div class="sProductCard__bordered-container-headline container">
+					<nav class="breadcrumb-slider-js-prod-card03 swiper-container" aria-label="breadcrumb">
+						<ol class="breadcrumb swiper-wrapper" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+							<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Каталог домов</span>
+									<meta itemprop="position" content="1"/></a></li>
+							<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Проект дома Атлас-10</span>
+									<meta itemprop="position" content="2"/></a></li>
+						</ol>
+					</nav>
+					<div class="sProductCard__turn-back-btn">
+						<svg class="icon icon-angle-left ">
+							<use xlink:href="img/svg/sprite.svg#angle-left"></use>
+						</svg><span>Вернуться назад</span>
 					</div>
-					<div class="row"></div>
+					<h1>Проект дома Атлас-10</h1>
+				</div>
+				<div class="sProductCard__house-chars-header container">
+					<div class="sProductCard__chars-header-content"><span class="chars-header-headline">Общие характеристики:</span>
+						<ul class="chars-pills-list">
+							<li><span>Общая площадь:</span><span>223.5 м2</span></li>
+							<li><span>Габариты:</span><span>14.4х11.0</span></li>
+							<li><span>Материал:</span><span>Газобетон</span></li>
+							<li><span>Стиль:</span><span>Классика</span></li>
+						</ul>
+					</div>
+					<div class="sProductCard__build-time-baner">
+						<div class="iconed-line">
+							<svg class="icon icon-check-calendar ">
+								<use xlink:href="img/svg/sprite.svg#check-calendar"></use>
+							</svg><span class="light-txt">Срок строительства:</span>
+						</div><span class="time-txt-from">от</span><span class="time-txt-days">150 дней</span>
+					</div>
+				</div>
+				<div class="sProductCard__blue-strip container">
+					<p class="headline-txt">В проекте предусмотренно:</p>
+					<ul class="pills-list">
+						<li class="pill-item">
+							<svg class="icon icon-small-blue-bad ">
+								<use xlink:href="img/svg/sprite.svg#small-blue-bad"></use>
+							</svg><span class="pill-txt">3 спальни</span>
+						</li>
+						<li class="pill-item">
+							<svg class="icon icon-small-white-window ">
+								<use xlink:href="img/svg/sprite.svg#small-white-window"></use>
+							</svg><span class="pill-txt">2 балкона</span>
+						</li>
+						<li class="pill-item">
+							<svg class="icon icon-small-blue-shower ">
+								<use xlink:href="img/svg/sprite.svg#small-blue-shower"></use>
+							</svg><span class="pill-txt">2 с/узла</span>
+						</li>
+						<li class="pill-item">
+							<svg class="icon icon-small-white-umbrella ">
+								<use xlink:href="img/svg/sprite.svg#small-white-umbrella"></use>
+							</svg><span class="pill-txt">Терраса</span>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!-- end sProductCard-->
+			<!-- start sMap-->
+			<div class="sMap" id="sMap"><iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A6b422557a0b84a1e0b7d340c6e499a6a26494033f9d4972298751878ff8da093&amp;source=constructor" width="1280" height="720" frameborder="0"></iframe>
+				<div class="sMap__map-of-our-houses">
+					<div class="map-txt-headline"><span>К</span><span>арта наших домов</span></div>
+					<p class="map-txt-par">Взгляните на карте, где расположены построенные нами дома в черте города и области</p>
+					<svg class="icon icon-small-blue-location ">
+						<use xlink:href="img/svg/sprite.svg#small-blue-location"></use>
+					</svg>
 				</div>
 			</div>
-			<!-- end headerBlock-->
-			<!-- start sForm-->
-			<section class="sForm section" id="sForm">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>sForm</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end sForm-->
-			<!-- start sContact-->
-			<section class="sContact section" id="sContact">
-				<div class="container">
-					<div class="section-title text-center">
-						<h2>sContact</h2>
-					</div>
-					<div class="row"></div>
-				</div>
-			</section>
-			<!-- end sContact-->
+			<!-- end sMap-->
 			<footer class="footer block-with-lazy">
 				<div class="container">
 					<div class="footer__main-footer-row row">

@@ -2,4 +2,11 @@ mixin sMap()
 	// start sMap
 	+b.sMap#sMap&attributes(attributes)
 		<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A6b422557a0b84a1e0b7d340c6e499a6a26494033f9d4972298751878ff8da093&amp;source=constructor" width="1280" height="720" frameborder="0"></iframe>
+		+e.map-of-our-houses
+			.map-txt-headline
+				span К
+				span арта наших домов
+			p.map-txt-par Взгляните на карте, где расположены построенные нами дома в черте города и области
+			+icon('small-blue-location')
+
 	// end sMap

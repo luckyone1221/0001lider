@@ -47,7 +47,9 @@
 		max-width: calc(100% - 30px);
 		padding-left: 0;
 		h2{
-			margin-bottom: rem(8);
+			margin-bottom: rem(10);
+			font-size: rem(44);
+			//color: red;
 			position: relative;
 			z-index: 1;
 		}
@@ -166,12 +168,15 @@
 			bottom: rem(-15px);
 			left: -15px;
 			width: calc(100% + 30px);
+
+			font-size: rem(14);
 			@include media-breakpoint-up(lg){
 				position: static;
 				height: rem(52);
 				line-height: rem(50);
-				margin-right: rem(10);
+				margin-right: 5px;
 				padding: 0 rem(26);
+				//background-color: black !important;
 				width: auto;
 			}
 		}
@@ -439,20 +444,21 @@
 			content: '';
 			display: block;
 			position: absolute;
-			width: 5px;
+			width: 8px;
 			height: 1.5px;
 			border-radius: 1px;
 			background-color: $body-color;
 		}
 		&:before{
 			top: calc(50% - 1px);
-			left: calc(50% - 3.5px);
+			left: calc(50% - 6.25px);
 			transform: rotate(45deg);
 		}
 		&:after{
 			top: calc(50% - 1px);
-			left: calc(50% - 1.25px);
+			left: calc(50% - 2.25px);
 			transform: rotate(-45deg);
+			//background-color: red;
 		}
 	}
 	.select2-container--open{
@@ -530,7 +536,6 @@
 				padding-bottom: rem(15);
 			}
 			&__sort-for-row{
-				//height: 40px;
 				margin-left: 0;
 				margin-right: 0;
 			}
@@ -643,6 +648,7 @@
 			height: 1.5px;
 			border-radius: 1px;
 			background-color: $body-color;
+			@include mt();
 		}
 		&:before{
 			top: calc(50% - 1px);
@@ -658,8 +664,13 @@
 	}
 	.select2-container--open{
 		.select2-selection__arrow{
-			transform: rotateX(180deg);
-			backface-visibility: visible;
+			&:before{
+				//transform: rotate();
+				transform: rotate(-45deg);
+			}
+			&:after{
+				transform: rotate(45deg);
+			}
 		}
 	}
 
@@ -689,7 +700,7 @@
 
 //catalog table-item
 .catalog-table-items-container{
-	padding-bottom: rem(80);
+	padding-bottom: rem(50);
 
 	display: none;
 	&.active{
@@ -730,20 +741,22 @@
 		@include media-breakpoint-up(lg){
 			border-right: none;
 		}
-		padding: rem(30) rem(40);
+		padding: rem(30) rem(32) rem(30) rem(38);
 	}
 	//header
 	&__descr-header{
 		display: flex;
-		padding-bottom: rem(7);
+		padding-bottom: rem(1);
 	}
 	&__descr-header-txt-bl{
-		span{
-			font-weight: bold;
-			font-size: rem(20px);
-			line-height: 120%;
-			margin-bottom: rem(7);
+		font-weight: bold;
+		font-size: rem(20px);
+		@include media-breakpoint-up(xxl){
+			font-size: 20px;
 		}
+		line-height: 120%;
+		margin-bottom: rem(7);
+		color: $body-color;
 	}
 	&__descr-location{
 		flex-grow: 1;
@@ -752,18 +765,22 @@
 		.icon{
 			font-size: rem(14px);
 			margin-right: rem(5px);
+			//color: red;
 		}
 		span{
 			font-weight: 500;
-			font-size: rem(12px);
+			font-size: 12px;
 			line-height: 145%;
 			color: $light-blue;
+			//color: red;
 		}
 	}
 	&__after-header{
+		//color: red;
 		font-size: rem(14px);
 		line-height: 130%;
 		padding-bottom: rem(10);
+		margin-bottom: 0;
 	}
 	//table
 	&__features-table{
@@ -774,8 +791,8 @@
 		th{
 			position: relative;
 			padding-left: rem(15px);
-			padding-top: rem(5px);
-			padding-bottom: rem(5px);
+			padding-top: rem(4px);
+			padding-bottom: rem(4px);
 			&:first-child{
 				padding-right: rem(45px);
 			}
@@ -806,7 +823,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
-		padding-bottom: rem(20);
+		padding-bottom: rem(15);
 	}
 	&__descr-with-icon{
 		padding-right: rem(50);
@@ -823,9 +840,10 @@
 	}
 	//
 	&__avaliable-options-list{
-		padding-bottom: rem(20px);
+		padding-bottom: rem(18px);
 	}
 	&__avaliable-option-header{
+		//color: red;
 		font-size: rem(14px);
 		line-height: rem(20px);
 		padding-right: rem(5px);
@@ -853,13 +871,18 @@
 			display: block;
 			font-weight: 500;
 			font-size: rem(14px);
-			line-height: rem(20px);
+			line-height: rem(16px);
 		}
 		.price-value{
 			font-weight: 900;
 			font-size: rem(25);
-			line-height: rem(36);
+			line-height: rem(33);
 			color: $black;
+			//color: red;
+		}
+		.banknote-name{
+			color: $body-color;
+			margin-left: rem(5);
 		}
 	}
 
@@ -883,7 +906,7 @@
 			color: $primary;
 		}
 		.icon{
-			font-size: rem(15px);
+			font-size: rem(10px);
 			line-height: rem(20px);
 			margin-left: rem(12);
 		}
@@ -896,7 +919,7 @@
 
 .catalog-square-items-container{
 	@include roww(7.5px);
-	margin-bottom: rem(60);
+	margin-bottom: 55px;
 	@include media-breakpoint-up(md){
 		display: none;
 		&.active{
@@ -906,7 +929,7 @@
 }
 
 .catalog-square-item{
-	margin-bottom: rem(20);
+	margin-bottom: 25px;
 
 
 	.catalog-square-item__content-part{
@@ -962,9 +985,9 @@
 			top: 0;
 		}
 	}
-
+	//
 	&__content-part{
-		padding: rem(20);
+		padding: rem(20) rem(20) rem(20) rem(25);
 
 	}
 	&__location-link{
@@ -973,58 +996,62 @@
 		white-space: nowrap;
 		padding-bottom: rem(15);
 		.icon{
-			font-size: rem(14px);
+			font-size: 14px;
 			margin-right: rem(5px);
 		}
 		span{
 			font-weight: 500;
-			font-size: rem(12px);
+			font-size: 12px;
 			color: $light-blue;
 		}
 	}
 	&__card-header{
 		font-weight: bold;
-		font-size: rem(18px);
 		line-height: rem(22);
 		color: $body-color;
-		margin-bottom: rem(6);
+		display: block;
+		padding-bottom: 5px;
+
+		font-size: 16px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(18px);
+		}
 	}
 	&__card-descr-par{
-		font-size: rem(14);
-		line-height: rem(18);
-		color: #283138;
-		padding-bottom: rem(5);
+		font-size: 14px;
+		line-height: 18px;
+		padding-bottom: 10px;
 		margin-bottom: 0;
 	}
 	//list
 	&__advantage-pills-list{
 		list-style: none;
-		padding-bottom: rem(12);
+		padding-bottom: 12px;
 		margin: 0;
 		.advantage-item{
 			position: relative;
-			padding-left: rem(15px);
-			padding-top: rem(5px);
-			padding-bottom: rem(5px);
+			padding-left: 15px;
+			padding-top: 4px;
+			padding-bottom: 4px;
 			&:after{
 				content: '';
 				position: absolute;
 				left: 0;
 				top: calc(50% - 3.5px);
-				height: rem(7px);
-				width: rem(7px);
+				height: 7px;
+				width: 7px;
 				background-color: $primary;
 			}
 			span:first-child{
 				font-weight: normal;
-				font-size: rem(16px);
-				line-height: rem(21);
-				margin-right: rem(5);
+				font-size: 16px;
+				line-height: 21px;
+				margin-right: 5px;
 			}
 			span:last-child{
 				font-weight: bold;
-				font-size: rem(16px);
-				line-height: rem(21);
+				font-size: 16px;
+				line-height: 21px;
 			}
 		}
 	}
@@ -1033,7 +1060,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-start;
-		padding-bottom: rem(20);
+		padding-bottom: 15px;
 	}
 	&__descr-with-icon{
 		padding-right: rem(30);
@@ -1045,27 +1072,27 @@
 			font-size: 20px;
 		}
 		span{
-			font-size: rem(16px);
+			font-size: 16px;
 		}
 	}
 	//
 	&__avaliable-options-list{
-		padding-bottom: rem(20px);
+		padding-bottom: 12px;
 	}
 	&__avaliable-option-header{
 		display: block;
-		font-size: rem(14px);
-		line-height: rem(20px);
-		padding-right: rem(5px);
+		font-size: 14px;
+		line-height: 20px;
+		padding-right: 5px;
 	}
 	&__avaliable-option-link{
-		font-size: rem(14);
-		line-height: rem(20px);
+		font-size: 14px;
+		line-height: 20px;
 		color: $primary;
 		&:after{
 			content: ', ';
 		}
-		padding-right: rem(5);
+		padding-right: 5px;
 		&:last-child{
 			&:after{
 				content: none;
@@ -1076,22 +1103,22 @@
 	&__price-bl{
 		display: flex;
 		align-items: center;
-		padding-bottom: rem(15);
+		padding-bottom: 15px;
 		.price-txt{
-			margin-right: rem(6);
+			margin-right: 6px;
 			font-weight: 500;
-			font-size: rem(14px);
-			line-height: rem(20px);
+			font-size: 14px;
+			line-height: 20px;
 		}
 		.price-value{
 			font-weight: 900;
-			font-size: rem(18);
-			line-height: rem(26);
+			font-size: 18px;
+			line-height: 26px;
 			color: $black;
 		}
 		.price-money-txt{
-			font-size: rem(14);
-			padding-left: rem(5);
+			font-size: 14px;
+			padding-left: 5px;
 		}
 	}
 	//
@@ -1105,14 +1132,14 @@
 		}
 		span{
 			font-weight: bold;
-			font-size: rem(14px);
-			line-height: rem(20px);
+			font-size: 14px;
+			line-height: 20px;
 			color: $primary;
 		}
 		.icon{
-			font-size: rem(15px);
-			line-height: rem(20px);
-			margin-left: rem(12);
+			font-size: 9.5px;
+			line-height: 20px;
+			margin-left: 12px;
 		}
 	}
 	&__{}

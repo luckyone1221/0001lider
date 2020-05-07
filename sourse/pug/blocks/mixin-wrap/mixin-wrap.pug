@@ -11,15 +11,15 @@ mixin icon(name,mod)
 
 
 
-//- breadcrumb
+//-breadcrumb
 mixin breadcrumb(...items)
-	nav(aria-label="breadcrumb" )
-		ol.breadcrumb(itemscope itemtype="http://schema.org/BreadcrumbList")
+	nav(aria-label="breadcrumb" ).breadcrumb-slider-js-prod-card03.swiper-container
+		ol.breadcrumb.swiper-wrapper(itemscope itemtype="http://schema.org/BreadcrumbList")
 			-for (var i = 0; i < items.length; i++)
-				li.breadcrumb-item( class=(i == items.length - 1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
-					a(href=(i == 0 ? "/" : '#') itemprop="item" )
-						span( itemprop="name")= items[i]
-						meta(itemprop="position" content= (i + 1) )
+					li.breadcrumb-item.swiper-slide( class=(i == items.length-1 ? "active" : '')   itemprop="itemListElement" itemscope  itemtype="http://schema.org/ListItem")
+						a(href=(i == 0 ? "/" : '#') itemprop="item" )
+							span( itemprop="name")= items[i]
+							meta(itemprop="position" content= (i + 1) )
 
 
 		
@@ -100,12 +100,12 @@ mixin mnu2()
 mixin mnu2Footer()
 	ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		+mnuItem2('Главная', '', '/')
-		+mnuItem2('Калькулятор')
-		+mnuItem2('Каталог домов', 'current-menu-item')
-		+mnuItem2('Услуги')
 		+mnuItem2('Отзывы')
+		+mnuItem2('Калькулятор')
 		+mnuItem2('Контакты')
+		+mnuItem2('Каталог домов', 'current-menu-item')
 		+mnuItem2('Карта домов')
+		+mnuItem2('Услуги')
 		+mnuItem2('О компании')
 
 mixin mnuItem2(linkName, mnuItemClasses="", linkPatch="#")

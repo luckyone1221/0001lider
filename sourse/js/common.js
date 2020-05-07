@@ -175,6 +175,8 @@ const JSCCommon = {
 		})
 	},
 	//taken from good planet
+
+
 	inputMask() {
 		// mask for input
 		$('input[type="tel"]').attr("pattern", "[+][0-9]{1}[(][0-9]{3}[)][0-9]{3}-[0-9]{2}-[0-9]{2}").inputmask("+9(999)999-99-99");
@@ -203,7 +205,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog-square.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -384,7 +386,15 @@ function eventHandler() {
 		$('body').removeClass('fixed-on-filter-js');
 		$('.filters-block__filter-box-container').removeClass('active');
 	})
-
+	//breadcrumbs
+	var breadSl = new Swiper('.breadcrumb-slider-js-prod-card03', {
+		slidesPerView: 'auto',
+		// spaceBetween: 30,
+		freeMode: true,
+		freeModeMomentum: true,
+		// spaceBetween: 30,
+		watchOverflow: true,
+	});
 	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {

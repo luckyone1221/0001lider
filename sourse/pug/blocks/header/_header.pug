@@ -1,18 +1,19 @@
 mixin header()
 	// start header
 	+b.HEADER.header#header&attributes(attributes)
-		+e.A.logo-link(href="/")
-			+e.IMG.logo-link-img(src="img/logo.svg")
-		+e.menu-col.d-none.d-lg-flex
-			+mnu2()
-		+e.phone-col.d-none.d-lg-flex
-			+e.A.phone-link(href="tel:+8-831-410-40-60")
-				+e.phone-img-cont
-					+e.IMG.phone-img(src="img/phone-header.svg" alt="")
-				+e.SPAN.phone-number 8 (831) 410-40-60
-			+e.left-order-btn.btn.btn-primary(href="#") Оставить заявку
-		+e.burger-cont.d-flex.d-lg-none
-			span
+		+e.header-container.container
+			+e.A.logo-link(href="/")
+				+e.IMG.logo-link-img(src="img/logo.svg")
+			+e.menu-col.d-none.d-lg-flex
+				+mnu2()
+			+e.phone-col.d-none.d-lg-flex
+				+e.A.phone-link(href="tel:+8-831-410-40-60")
+					+e.phone-img-cont
+						+e.IMG.phone-img(src="img/phone-header.svg" alt="")
+					+e.SPAN.phone-number 8 (831) 410-40-60
+				+e.left-order-btn.btn.btn-primary(href="#") Оставить заявку
+			+e.burger-cont.d-flex.d-lg-none
+				span
 
 mixin mobMenu2()
 	+b.mob-menu-cont

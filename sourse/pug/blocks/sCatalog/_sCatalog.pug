@@ -66,7 +66,7 @@ mixin range(c1, c2)
 
 mixin filterSelect(selectName, optionsArr=['1', '2', '3'], placeholder='Этажность', keyClass='custom-select2')
 	select(name=selectName data-placeholder=placeholder class=keyClass)
-		option(value="")
+		option(value="" label='#')
 		- for (let item of optionsArr)
 			option(value=item)=item
 
@@ -77,7 +77,7 @@ mixin catalogBlock(TableBtnClass, squareBtnClass)
 			+e.sort-header
 				+form-wrap()
 					.row
-						.col
+						.col.d-none.d-lg-block
 							+e.col-headline-txt Сортировать проекты по:
 							+e.sort-for-row.row
 								+e.popular-select-bl.col-lg-4
@@ -123,8 +123,7 @@ mixin catalogTableItem(imgNum='1')
 			img.item-img(src=`img/@2x/catalog-table-${imgNum}.jpg` alt="")
 		+e.descr-block
 			+e.descr-header
-				+e.descr-header-txt-bl
-					span Новый дом с бассейном и собственным садом
+				+e.A.descr-header-txt-bl(href="#") Новый дом с бассейном и собственным садом
 				+e.descr-location(href="#")
 					+icon('small-blue-location')
 					span Нижний Новгород
@@ -159,7 +158,8 @@ mixin catalogTableItem(imgNum='1')
 			+e.price-and-info-bl.row
 				+e.price-col.col-auto
 					span.price-txt Цена:
-					span.price-value 3 520 500 рублей
+					span.price-value 3 520 500
+					span.banknote-name рублей
 				+e.show-more-col.col
 					+e.A.show-more(href="#")
 						.inner-cont
@@ -169,6 +169,9 @@ mixin catalogTableItem(imgNum='1')
 	//-catalog square -items
 mixin catalogSquareItems(itemClasses)
 	.catalog-square-items-container.row(class=itemClasses)
+			+catalogSuareItem()
+			+catalogSuareItem()
+			+catalogSuareItem()
 			+catalogSuareItem()
 			+catalogSuareItem()
 			+catalogSuareItem()
@@ -185,9 +188,9 @@ mixin catalogSuareItem()
 				+e.A.location-link(href='#')
 					+icon('small-blue-location')
 					span Нижний Новгород
-				+e.card-header 2-х этажный котедж с гаражем
+				+e.A.card-header(href="#") 2-х этажный котедж с гаражем
 				+e.P.card-descr-par Современная планировка дома и качественные материалы при строительстве
-				+e.advantage-pills-list
+				+e.UL.advantage-pills-list
 					li.advantage-item
 						span Общая площадь:
 						span 223.5 м2
