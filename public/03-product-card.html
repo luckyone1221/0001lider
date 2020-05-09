@@ -27,7 +27,7 @@
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body class="page-has-fiter-bar"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<!-- start header-->
 			<header class="header" id="header">
@@ -120,6 +120,196 @@
 							</svg><span class="pill-txt">Терраса</span>
 						</li>
 					</ul>
+				</div>
+				<div class="house-img-sliders-container container">
+					<div class="house-img-sliders-container__big-slider">
+						<div class="big-slider-prev d-none d-sm-flex">
+							<svg class="icon icon-slider-prev ">
+								<use xlink:href="img/svg/sprite.svg#slider-prev"></use>
+							</svg>
+						</div>
+						<div class="big-slider-next d-none d-sm-flex">
+							<svg class="icon icon-slider-next ">
+								<use xlink:href="img/svg/sprite.svg#slider-next"></use>
+							</svg>
+						</div>
+						<div class="big-slider-js-pugin"></div>
+						<div class="big-slider-js-custom-fractional-pugin"><span class="current">01</span><span class="slash">/</span><span class="max">04</span></div>
+						<div class="swiper-container big-slider-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img class="swiper-lazy" data-src="img/@2x/slider-03-1.jpg" alt="" src="#"/></div>
+								<div class="swiper-slide"><img class="swiper-lazy" data-src="img/@2x/slider-03-2.jpg" alt="" src="#"/></div>
+								<div class="swiper-slide"><img class="swiper-lazy" data-src="img/@2x/slider-03-3.jpg" alt="" src="#"/></div>
+								<div class="swiper-slide"><img class="swiper-lazy" data-src="img/@2x/slider-03-4.jpg" alt="" src="#"/></div>
+								<div class="swiper-slide"><img class="swiper-lazy" data-src="img/@2x/slider-03-5.jpg" alt="" src="#"/></div>
+							</div>
+						</div>
+					</div>
+					<div class="house-img-sliders-container__slider-thumb d-none d-sm-block">
+						<div class="swiper-container big-slider-thumb-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="img-container"><img src="img/@2x/slider-03-1.jpg" alt=""/></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="img-container"><img src="img/@2x/slider-03-2.jpg" alt=""/></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="img-container"><img src="img/@2x/slider-03-3.jpg" alt=""/></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="img-container"><img src="img/@2x/slider-03-4.jpg" alt=""/></div>
+								</div>
+								<div class="swiper-slide">
+									<div class="img-container"><img src="img/@2x/slider-03-5.jpg" alt=""/></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="house-plan-container container tabs"><span class="house-plan-container__headline">Планировка дома</span>
+					<div class="house-plan-container__tabs-bar tabs__caption">
+						<div class="house-plan-container__tabs-bar-item tabs__btn active">План 1-го этажа
+						</div>
+						<div class="house-plan-container__tabs-bar-item tabs__btn">План 2-го этажа
+						</div>
+					</div>
+					<div class="house-plan-container__tabs-content tabs__wrap">
+						<div class="house-plan-container__tabs-conent-item tabs__content active">
+							<div class="house-plan-container__house-img-map-cont"><img src="img/@2x/house-map.jpg" alt="#"/>
+							</div>
+						</div>
+						<div class="house-plan-container__tabs-conent-item tabs__content">
+							<div class="house-plan-container__house-img-map-cont"><img src="img/@2x/house-map.jpg" alt="#"/>
+							</div>
+						</div>
+					</div>
+					<div class="house-plan-container__house-ready-images-row row">
+						<div class="house-plan-container__house-ready-item col-md-6 col-lg-3"><img src="img/@2x/house-ready-1.png" alt=""/>
+						</div>
+						<div class="house-plan-container__house-ready-item col-md-6 col-lg-3"><img src="img/@2x/house-ready-2.png" alt=""/>
+						</div>
+						<div class="house-plan-container__house-ready-item col-md-6 col-lg-3"><img src="img/@2x/house-ready-1.png" alt=""/>
+						</div>
+						<div class="house-plan-container__house-ready-item col-md-6 col-lg-3"><img src="img/@2x/house-ready-2.png" alt=""/>
+						</div>
+					</div>
+				</div>
+				<div class="house-chars-bl">
+					<div class="house-chars-bl__house-chars-bl-container container">
+						<div class="house-chars-bl__headline">Характеристики дома
+						</div>
+						<div class="house-chars-bl__item-box">
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Фундамент / перекрытие 1-го этажа</span><span class="headline-num">01</span>
+								</div>
+								<div class="house-chars-bl__char-item">Утепленная монолитная ж/б плита с ребрами жесткости вниз (бетон М350, толщина 200 мм, арм. ø12мм, шаг 200 мм; сечение ребер 400х400 мм, арм. Ø12 и 8 мм, шаг 200 мм; песчаная подушка 300 мм). Ленточный монолитный ж/б фундамент под террасу, гараж (при наличии).
+								</div>
+								<div class="house-chars-bl__char-item">Рулонная (наплавляемая) гидроизоляция Стеклоизол ТПП Технониколь (в 2 слоя)
+								</div>
+								<div class="house-chars-bl__char-item">Утепление толщиной 50 мм сплошное под всей конструкцией фундамента
+								</div>
+							</div>
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Инженерные коммуникации</span><span class="headline-num">02</span>
+								</div>
+								<div class="house-chars-bl__char-item">Точки канализации на 1-ом этаже строения (прокладка под пятном застройки и отвод на 2 метра за границу фундамента)
+								</div>
+								<div class="house-chars-bl__char-item">Ввод воды в бойлерную (прокладка ПНД трубы и отвод на 2 метра). Монтаж закладной под ввод электрокабеля
+								</div>
+								<div class="house-chars-bl__char-item">Монтаж фанового стояка в кирпичной шахте с выводом трубы на крышу
+								</div>
+								<div class="house-chars-bl__char-item">Технологические отверстия под монтаж шахт дымохода и вытяжных вентканалов
+								</div>
+								<div class="house-chars-bl__char-item">Устройство кирпичной шахты под дымоход с выводом трубы на крышу (по проекту)
+								</div>
+								<div class="house-chars-bl__char-item">Устройство кирпичных шахт вытяжных вентканалов с утеплением холодного контура и выводом трубы на крышу (по проекту)
+								</div>
+							</div>
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Стены, перегородки / 1-ый и 2-ой этаж</span><span class="headline-num">03</span>
+								</div>
+								<div class="house-chars-bl__char-item">Внешние несущие стены: газобетонный блок YTONG D500 толщиной 300 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+								</div>
+								<div class="house-chars-bl__char-item">Внешние несущие стены: газобетонный блок YTONG D400 толщиной 375 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+								</div>
+								<div class="house-chars-bl__char-item">Внешние несущие стены: газобетонный блок YTONG D400 толщиной 375 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+								</div>
+							</div>
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Чердачное перекрытие / между 2-ым этажом и чердаком</span><span class="headline-num">04</span>
+								</div>
+								<div class="house-chars-bl__char-item">Перекрытие усиленное балочное деревянное (несущие балки 200х50, 200х100, по расчету). Обработка древесины огнебиозащитным составом.
+								</div>
+								<div class="house-chars-bl__char-item">Утепление 150 мм плитами из минеральной ваты ROCKWOOL и монтаж защитных мембран JUTA Ютавек, Ютафол
+								</div>
+								<div class="house-chars-bl__char-item">Монтаж деревянной обрешетки 100х25 мм (подшив) по низу чердачного перекрытия. Обработка древесины огнебиозащитным составом.
+								</div>
+							</div>
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Конструкция крыши</span><span class="headline-num">05</span>
+								</div>
+								<div class="house-chars-bl__char-item">Усиленная стропильная система (несущие стропила 150х50, 200х50 мм по расчету, ригели 150х50 мм, контробрешетка 50х50 мм, обрешетка 100х25 мм, мембрана JUTA Ютавек). Обработка древесины огнебиозащитным составом.
+								</div>
+							</div>
+							<div class="house-chars-bl__item">
+								<div class="house-chars-bl__item-headline"><span class="headline-txt">Покрытие кровли</span><span class="headline-num">06</span>
+								</div>
+								<div class="house-chars-bl__char-item">Устройство покрытия крыши из металлочерепицы (покрытие: полиэстер, полный комплект по проекту)
+								</div>
+							</div>
+						</div>
+						<div class="project-price-baner">
+							<div class="project-price-baner__headline"><span>Ориентировочная</span><span>Стоимость проекта:</span>
+							</div>
+							<div class="project-price-baner__price">
+								<div class="currency-icon-cont"><img src="img/ruble-icon.svg" alt=""/></div>
+								<div class="price-txt">2 520 000</div>
+							</div><a class="project-price-baner__get-calc-for-free-btn" href="#">Получить расчет бесплатно</a>
+						</div>
+						<div class="credit-consultation-form-cont">
+							<div class="form-content">
+								<div class="form-wrap">
+									<form>
+										<input type="hidden" name="example-input-field"/>
+										<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+										<input class="utm_source" type="hidden" name="utm_source"/>
+										<input class="utm_term" type="hidden" name="utm_term"/>
+										<input class="utm_medium" type="hidden" name="utm_medium"/>
+										<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+										<div class="form-wrap__headline"><span class="first-line">Вы можете заказать</span><span class="last-line">строительство дома в ипотеку</span>
+										</div>
+										<div class="form-wrap__inp-row">
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__title">Ваше имя:</span><input class="form-wrap__input form-control" type="text" placeholder="Иван Иванов" name="name-input"/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__title">Ваш телефон:</span><input class="form-wrap__input form-control" type="tel" placeholder="+7 (___) ___ - __ - __" name="phone-input"/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+											<div class="form-wrap__input-wrap form-group">
+												<label><span class="form-wrap__title">Ваш e-mail:</span><input class="form-wrap__input form-control" type="email" placeholder="example@mail.com" name="email-input"/>
+												</label>
+											</div>
+											<!-- +e.input-wrap-->
+										</div>
+										<label class="form-wrap__personal-data-agreement">
+											<input class="hidden-checkbox" type="checkbox" checked="checked"/><span class="custom-checkbox-cont">
+												<svg class="icon icon-check-classic ">
+													<use xlink:href="img/svg/sprite.svg#check-classic"></use>
+												</svg></span><span class="checkbox-description">Я согласен на обработку своих персональных данных согласно политики конфиденциальности</span>
+										</label>
+										<button class="form-wrap__get-consultation-btn">Получить консультацию по ипотеке
+										</button>
+									</form>
+								</div>
+							</div>
+							<div class="form-foto-container"><img class="form-foto-img" src="img/@2x/happy-family.png" alt=""/></div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sProductCard-->

@@ -11,7 +11,7 @@ $file-format: woff2 woff;
 @include font-face ($default-font, $addr + "Akzidenz-Grotesk-Pro-Regular/AkzidenzGroteskPro-Regular", 400, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Akzidenz-Grotesk-Pro-Medium/AkzidenzGroteskPro-Md", 500, $file-formats: $file-format);
 @include font-face ($default-font, $addr + "Akzidenz-Grotesk-Pro-Bold/AkzidenzGroteskPro-Bold", 700, $file-formats: $file-format);
-@include font-face ($default-font, $addr + "Akzidenz-Grotesk-Pro-Bold/AkzidenzGroteskPro-Bold", 900, $file-formats: $file-format); // ????
+@include font-face ($default-font, $addr + "Akzidenz-Grotesk-Pro-Super900/AkzidenzGroteskPro-Super", 900, $file-formats: $file-format); // ????
 //
 
 // font-weight helper:

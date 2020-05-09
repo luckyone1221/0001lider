@@ -50,6 +50,14 @@
  .breadcrumb-item {
 	 width: auto;
 	 //padding-right: 30px;
+	 padding-right: 4px;
+	 position: relative;
+	 &:before{
+		 //display: none;
+		 position: absolute;
+		 //color: red;
+		 left: 0;
+	 }
 	 a {
 		 font-weight: normal;
 		 line-height: rem(22px);
@@ -61,6 +69,7 @@
 		 a {
 			 color: $breadcrumb-gray;
 			 pointer-events: none;
+			 //color: red;
 		 }
 	 }
  }

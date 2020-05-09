@@ -9,7 +9,7 @@ include ../blocks/sProductCard/_sProductCard.pug
 
 
 block variables
-	- let  mainPage= 'page-has-fiter-bar'
+	- let  mainPage= null
 block title
 	- let  title= '03-product-card'
 	title= title
@@ -18,6 +18,5 @@ block pagecontent
 	+mobMenu2()
 	+sProductCard()
 		+breadcrumb('Каталог домов','Проект дома Атлас-10')
-		//-'3 asdddddddddd','4 asdddddddd', '5 asddddddddddddd'
 	+sMap()
 	+footer()

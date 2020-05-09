@@ -44,5 +44,156 @@ mixin sProductCard()
 				li.pill-item
 					+icon('small-white-umbrella')
 					span.pill-txt Терраса
-
+		+houseImgSlider()
+		+housePlanBl()
+		+houseCharsBl()
 	// end sProductCard
+
+
+mixin houseImgSlider()
+	+b.house-img-sliders-container.container
+		+e.big-slider
+			.big-slider-prev.d-none.d-sm-flex
+				+icon("slider-prev")
+			.big-slider-next.d-none.d-sm-flex
+				+icon("slider-next")
+			.big-slider-js-pugin
+			.big-slider-js-custom-fractional-pugin
+				span.current 01
+				span.slash /
+				span.max 04
+			.swiper-container.big-slider-js
+				.swiper-wrapper
+					.swiper-slide
+						img.swiper-lazy(data-src="img/@2x/slider-03-1.jpg" alt="" src="#")
+					.swiper-slide
+						img.swiper-lazy(data-src="img/@2x/slider-03-2.jpg" alt="" src="#")
+					.swiper-slide
+						img.swiper-lazy(data-src="img/@2x/slider-03-3.jpg" alt="" src="#")
+					.swiper-slide
+						img.swiper-lazy(data-src="img/@2x/slider-03-4.jpg" alt="" src="#")
+					.swiper-slide
+						img.swiper-lazy(data-src="img/@2x/slider-03-5.jpg" alt="" src="#")
+		+e.slider-thumb.d-none.d-sm-block
+			.swiper-container.big-slider-thumb-js
+				.swiper-wrapper
+					.swiper-slide
+						.img-container
+							img(src="img/@2x/slider-03-1.jpg" alt="")
+					.swiper-slide
+						.img-container
+							img(src="img/@2x/slider-03-2.jpg" alt="")
+					.swiper-slide
+						.img-container
+							img(src="img/@2x/slider-03-3.jpg" alt="")
+					.swiper-slide
+						.img-container
+							img(src="img/@2x/slider-03-4.jpg" alt="")
+					.swiper-slide
+						.img-container
+							img(src="img/@2x/slider-03-5.jpg" alt="")
+
+mixin housePlanBl()
+	+b.house-plan-container.container.tabs
+		+e.SPAN.headline Планировка дома
+		+e.tabs-bar.tabs__caption
+			+e.tabs-bar-item.tabs__btn.active План 1-го этажа
+			+e.tabs-bar-item.tabs__btn План 2-го этажа
+		+e.tabs-content.tabs__wrap
+			+e.tabs-conent-item.tabs__content.active
+				+e.house-img-map-cont
+					img(src="img/@2x/house-map.jpg" alt="#")
+			+e.tabs-conent-item.tabs__content
+				+e.house-img-map-cont
+					img(src="img/@2x/house-map.jpg" alt="#")
+		+e.house-ready-images-row.row
+			+e.house-ready-item.col-md-6.col-lg-3
+				img(src="img/@2x/house-ready-1.png" alt="")
+			+e.house-ready-item.col-md-6.col-lg-3
+				img(src="img/@2x/house-ready-2.png" alt="")
+			+e.house-ready-item.col-md-6.col-lg-3
+				img(src="img/@2x/house-ready-1.png" alt="")
+			+e.house-ready-item.col-md-6.col-lg-3
+				img(src="img/@2x/house-ready-2.png" alt="")
+
+mixin houseCharsBl()
+	+b.house-chars-bl
+		+e.house-chars-bl-container.container
+			+e.headline Характеристики дома
+			+e.item-box
+				+e.item
+					+e.item-headline
+						span.headline-txt Фундамент / перекрытие 1-го этажа
+						span.headline-num 01
+					+e.char-item Утепленная монолитная ж/б плита с ребрами жесткости вниз (бетон М350, толщина 200 мм, арм. ø12мм, шаг 200 мм; сечение ребер 400х400 мм, арм. Ø12 и 8 мм, шаг 200 мм; песчаная подушка 300 мм). Ленточный монолитный ж/б фундамент под террасу, гараж (при наличии).
+					+e.char-item Рулонная (наплавляемая) гидроизоляция Стеклоизол ТПП Технониколь (в 2 слоя)
+					+e.char-item Утепление толщиной 50 мм сплошное под всей конструкцией фундамента
+				+e.item
+					+e.item-headline
+						span.headline-txt Инженерные коммуникации
+						span.headline-num 02
+					+e.char-item Точки канализации на 1-ом этаже строения (прокладка под пятном застройки и отвод на 2 метра за границу фундамента)
+					+e.char-item Ввод воды в бойлерную (прокладка ПНД трубы и отвод на 2 метра). Монтаж закладной под ввод электрокабеля
+					+e.char-item Монтаж фанового стояка в кирпичной шахте с выводом трубы на крышу
+					+e.char-item Технологические отверстия под монтаж шахт дымохода и вытяжных вентканалов
+					+e.char-item Устройство кирпичной шахты под дымоход с выводом трубы на крышу (по проекту)
+					+e.char-item Устройство кирпичных шахт вытяжных вентканалов с утеплением холодного контура и выводом трубы на крышу (по проекту)
+				+e.item
+					+e.item-headline
+						span.headline-txt Стены, перегородки / 1-ый и 2-ой этаж
+						span.headline-num 03
+					+e.char-item Внешние несущие стены: газобетонный блок YTONG D500 толщиной 300 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+					+e.char-item Внешние несущие стены: газобетонный блок YTONG D400 толщиной 375 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+					+e.char-item Внешние несущие стены: газобетонный блок YTONG D400 толщиной 375 мм (ж/б оконные перемычки с U-блоком; монолитный ж/б пояс с утеплением и доборной кладкой)
+				+e.item
+					+e.item-headline
+						span.headline-txt Чердачное перекрытие / между 2-ым этажом и чердаком
+						span.headline-num 04
+					+e.char-item Перекрытие усиленное балочное деревянное (несущие балки 200х50, 200х100, по расчету). Обработка древесины огнебиозащитным составом.
+					+e.char-item Утепление 150 мм плитами из минеральной ваты ROCKWOOL и монтаж защитных мембран JUTA Ютавек, Ютафол
+					+e.char-item Монтаж деревянной обрешетки 100х25 мм (подшив) по низу чердачного перекрытия. Обработка древесины огнебиозащитным составом.
+				+e.item
+					+e.item-headline
+						span.headline-txt Конструкция крыши
+						span.headline-num 05
+					+e.char-item Усиленная стропильная система (несущие стропила 150х50, 200х50 мм по расчету, ригели 150х50 мм, контробрешетка 50х50 мм, обрешетка 100х25 мм, мембрана JUTA Ютавек). Обработка древесины огнебиозащитным составом.
+				+e.item
+					+e.item-headline
+						span.headline-txt Покрытие кровли
+						span.headline-num 06
+					+e.char-item Устройство покрытия крыши из металлочерепицы (покрытие: полиэстер, полный комплект по проекту)
+			+projectPriceBaner()
+			+creditConsultationForm()
+
+
+
+mixin projectPriceBaner()
+	+b.project-price-baner
+		+e.headline
+			span Ориентировочная
+			span Стоимость проекта:
+		+e.price
+			.currency-icon-cont
+				img(src="img/ruble-icon.svg" alt="")
+			.price-txt 2 520 000
+		+e.A.get-calc-for-free-btn(href="#") Получить расчет бесплатно
+
+mixin creditConsultationForm()
+	.credit-consultation-form-cont
+		.form-content
+			+form-wrap()
+				+e.headline
+					span.first-line Вы можете заказать
+					span.last-line строительство дома в ипотеку
+				+e.inp-row
+					+input('Иван Иванов', 'text', 'Ваше имя:', 'name-input')
+					+input('+7 (___) ___ - __ - __', 'tel', 'Ваш телефон:', 'phone-input')
+					+input('example@mail.com', 'email', 'Ваш e-mail:', 'email-input')
+				+e.LABEL.personal-data-agreement
+					input.hidden-checkbox(type="checkbox" checked="checked")
+					span.custom-checkbox-cont
+						+icon('check-classic')
+					span.checkbox-description Я согласен на обработку своих персональных данных согласно политики конфиденциальности
+				+e.BUTTON.get-consultation-btn Получить консультацию по ипотеке
+		.form-foto-container
+			img.form-foto-img(src="img/@2x/happy-family.png" alt="")
