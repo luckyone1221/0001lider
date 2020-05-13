@@ -1,0 +1,28 @@
+mixin sProfit()
+	// start sProfit
+	+b.SECTION.sProfit.section#sProfit&attributes(attributes)
+		+e.inner-cont.container
+			+b.section-title
+				p Ваша выгода
+				h2 Сотрудничая с нами
+			+e.profit-pills-row.row
+				+commonProfitPill(1, 'Бесплатный проект', 'Бесплатно проектируем. Создадим детально продуманный проект Вашего будущего дома бесплатно, при условии строительства дома у нас')
+				+commonProfitPill(2, 'Смета с материалами и работами', 'При расчёте стоимости строительства мы предоставляем детальную смету, включающую в себя все необходимые материалы и работы')
+				+commonProfitPill(3, 'Гарантия по договору 10 лет', 'Строгое соблюдение гарантийных обязательств на выполненные работы и материалы')
+				+commonProfitPill(4, 'Открытые стройплощадки', 'Есть возможность посетить наши стройплощадки в удобном для Вас районе')
+				+commonProfitPill(5, 'Только качественные материалы', 'Мы являемся авторизованными партнерами производителей материалов, поставляемых на площадку')
+				+e.A.card-col.last-col.col-12.col-sm-6.col-lg-4(href='#')
+					span.last-pill-headline Мы всегда открыты для наших клиентов!
+					p.last-pill-txt Посетите одну из стройплощадок, чтобы убедиться в профессионализме наших строителей и технологий
+					.place-order-for-look-btn Записаться на осмотр
+
+	// end sProfit
+
+mixin commonProfitPill(i, headline, pTxt)
+	+e.A.card-col.col-12.col-sm-6.col-lg-4(href='#')
+		+e.top-line
+			.img-box
+				img(src=`img/profit-pills-${i}.svg` alt='')
+			.pill-number= "0" + i
+		+e.SPAN.pill-headline=headline
+		+e.P.pill-txt=pTxt

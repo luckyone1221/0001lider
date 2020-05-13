@@ -1,5 +1,11 @@
 "use strict";
 
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -202,7 +208,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/03.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -337,7 +343,39 @@ function eventHandler() {
 	$('.custom-select2-catalog-headline').select2({
 		minimumResultsForSearch: Infinity,
 		dropdownCssClass: "drop-down-catalog-header"
-	}); //for mob filter
+	});
+
+	function allWaysShowSelect() {
+		var allSelects = document.querySelectorAll('.select2-container');
+
+		var _iterator = _createForOfIteratorHelper(allSelects),
+				_step;
+
+		try {
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				var select = _step.value;
+				var placeholder = select.querySelector('.select2-selection__placeholder');
+				select.CustomPropPlaceholder = placeholder;
+				select.addEventListener('click', putPlaceholderBack);
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	function putPlaceholderBack() {
+		var placeholderPresent = this.querySelector('.select2-selection__placeholder');
+
+		if (!placeholderPresent) {
+			var renderedBlock = this.querySelector('.select2-selection__rendered');
+			renderedBlock.innerHTML = '';
+			renderedBlock.appendChild(this.CustomPropPlaceholder);
+		}
+	}
+
+	allWaysShowSelect(); //for mob filter
 
 	$('.filters-block__filter-mob-bar').click(function () {
 		$('body').addClass('fixed-on-filter-js');
@@ -359,7 +397,8 @@ function eventHandler() {
 
 	var bigSliderThumb = new Swiper('.big-slider-thumb-js', {
 		slidesPerView: '5',
-		spaceBetween: 10
+		spaceBetween: 10,
+		loop: true
 	});
 	var bigSlider = new Swiper('.big-slider-js', {
 		slidesPerView: '1',
@@ -376,6 +415,18 @@ function eventHandler() {
 			loadPrevNext: true
 		},
 		on: {
+			init: function init() {
+				var getMomentSliderCreated = window.setInterval(function () {
+					if (bigSlider) {
+						// here we recive bigSlider, dont need interval anymore
+						window.clearInterval(getMomentSliderCreated); //ater mounted callback
+
+						var amountOfSlides = document.querySelector('.big-slider-js-pugin').children.length;
+						var BigSliderFractPugMax = document.querySelector('.big-slider-js-custom-fractional-pugin .max');
+						BigSliderFractPugMax.innerHTML = addZero(amountOfSlides);
+					}
+				}, 100);
+			},
 			slideChange: function slideChange() {
 				if (bigSlider) {
 					//index of curr slide start from 0
@@ -391,14 +442,6 @@ function eventHandler() {
 		}
 	});
 
-	function setMaxSlides() {
-		var amountOfSlides = document.querySelector('.big-slider-js-pugin').children.length;
-		var BigSliderFractPugMax = document.querySelector('.big-slider-js-custom-fractional-pugin .max');
-		BigSliderFractPugMax.innerHTML = addZero(amountOfSlides);
-	}
-
-	setMaxSlides();
-
 	function addZero(num) {
 		num = Number(num);
 
@@ -407,8 +450,57 @@ function eventHandler() {
 		}
 
 		return num;
-	} //
+	} //main page
 
+
+	var mainSlider = new Swiper('.main-slider-js', {
+		slidesPerView: '1',
+		loop: true,
+		navigation: {
+			nextEl: '.main-slider-next',
+			prevEl: '.main-slider-prev'
+		},
+		lazy: {
+			loadPrevNext: true
+		},
+		on: {
+			init: function init() {
+				var getMomentSliderCreated = window.setInterval(function () {
+					if (mainSlider) {
+						// here we recive bigSlider, dont need interval anymore
+						window.clearInterval(getMomentSliderCreated); //ater mounted callback
+
+						var amountOfSlides = document.querySelector('.main-slider-js-pugin').children.length;
+						var SliderFractPugMax = document.querySelector('.main-slider-js-custom-fractional-pugin .max');
+						SliderFractPugMax.innerHTML = addZero(amountOfSlides);
+					}
+				}, 100);
+			},
+			slideChange: function slideChange() {
+				if (mainSlider) {
+					//index of curr slide start from 0
+					var BigSliderFractPugCurrent = document.querySelector('.main-slider-js-custom-fractional-pugin .current');
+					BigSliderFractPugCurrent.innerHTML = addZero(mainSlider.realIndex + 1);
+				}
+			}
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.main-slider-js-pugin'),
+			clickable: true
+		}
+	}); //last project slider
+
+	var lastProjectSlider = new Swiper('.last-project-js', {
+		slidesPerView: '1',
+		spaceBetween: 10,
+		loop: true,
+		//pagination
+		pagination: {
+			el: $(this).find('.last-project-slider-js-pugin'),
+			clickable: true
+		}
+	}); //
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

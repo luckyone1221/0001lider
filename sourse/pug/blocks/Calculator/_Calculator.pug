@@ -1,0 +1,135 @@
+mixin Calculator()
+	// start Calculator
+	+b.SECTION.Calculator.section#Calculator&attributes(attributes)
+		+e.inner-cont.container
+			+b.section-title
+				p Индивидуальный расчет
+				h2 Калькулятор строительства дома
+			+CalcStep1()
+	// end Calculator
+
+mixin CalcStep1()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '')
+		+stepItem('03', 'Перекрытия', '')
+		+stepItem('04', 'Кровля', '')
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader()
+				+stepContentTopLine()
+			+stepPreview()
+
+mixin calculatorHeader()
+	+b.calculator-header
+		+e.inner-row
+			+e.select-col
+				+form-wrap()
+					+e.inp-box
+						+e.inp-item-cont
+							.headline Этажность:
+							+b.catalog-headline-select-parent
+								+filterSelect('calculatorFloors', ['1 этаж', '2 этажа'], 'Этажность', 'custom-select2-catalog-headline')
+						+e.inp-item-cont
+							.headline Размеры строения:
+							+e.size-inputs-box
+								+input('Ширина (м.)')(class='size-input')
+								+input('Длина (м.)')(class='size-input')
+						+e.inp-item-cont
+							.headline Конфигурация несущих стен:
+							+b.catalog-headline-select-parent
+								+filterSelect('calculatorFloors', ['Шестистенок 1', 'Шестистенок 2'], 'Placeholder', 'custom-select2-catalog-headline')
+					+e.A.discard-link(href='#')
+						+icon('cross')
+						span Сбросить параметры
+			+e.result-col
+				+e.result-col-headline Габариты застройки:
+				ul
+					li
+						span Площадь дома:
+						span
+							|100 м
+							sup 2
+					li
+						span Периметр дома:
+						span 150 м
+					li
+						span Длина фундамента:
+						span 100 м
+
+mixin stepSrtip()
+	+b.step-strip-cont
+		+e.step-item-box
+			block
+
+
+mixin stepItem(num="01", name="", StepPrice="")
+	+e.step-item&attributes(attributes)
+		.custom-border-js
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+			span
+		+e.number-box=num
+		+e.content-cont
+			+e.step-name=name
+			+e.price=StepPrice
+
+mixin stepContent()
+	+b.step-content.col-lg-8
+		block
+
+mixin stepContentHeader(stepTxt='Шаг 01', stepName='Фундамент')
+	+e.header.row
+		.col
+			+e.step-txt=stepTxt
+			+e.step-name=stepName
+		+e.next-step-btn-col.col-sm-auto
+			+e.next-step-btn
+				span Следующий пункт
+				+icon('angle-right')
+
+mixin stepContentTopLine()
+	+e.UL.top-line
+		+e.LI.top-line-item
+			span Стоимость работ:
+			span 603 200 р.
+		+e.LI.top-line-item
+			span Стоимость материалов:
+			span 705 744 р.
+		+e.LI.top-line-item
+			span Итого:
+			span 1 308 944 р.
+
+mixin stepPreview(hasResultPriceBaner=true)
+	+b.step-preview.col-lg-4.text-center
+		+e.preview-img-bl
+			+e.preview-img-cont
+				img(src="img/@2x/calculator-preview.png" alt="")
+		if hasResultPriceBaner
+			+e.result-price-banner.text-left
+				+e.result-price-txt Итоговая стоимость:
+				+e.price-cont
+					+e.ruble-img-cont
+						img(src="img/yellow-ruble.svg" alt="")
+					+e.SPAN.baner-price-txt 1 320 300
+		+e.A.order-project-btn(href="#") Заказать проект
+
+

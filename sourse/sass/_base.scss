@@ -540,3 +540,61 @@ h2 .h2{
 		padding-bottom: 0px;
 	}
 }
+
+//swiper bullets
+
+.swiper-bullets-frame{
+	.swiper-pagination-bullet{
+		background-color: $swiper03-bulets-color;
+		width: 13px;
+		height: 13px;
+		margin: 0 7.5px;
+		@include mt();
+		&.swiper-pagination-bullet-active, &:hover{
+			background-color: $primary;
+		}
+	}
+}
+
+//swiper prev, next
+.slider-prev-frame, .slider-next-frame{
+	position: absolute;
+	background-color: $warning;
+	cursor: pointer;
+	z-index: 9;
+	width: 50px;
+	height: 40px;
+	top: calc(50% - 35px);
+
+	display: flex;
+	.icon{
+		margin: auto;
+		color: $black;
+		font-size: 20px;
+	}
+}
+.slider-prev-frame{
+	left: 0;
+	border-radius: 0px 3px 3px 0px;
+}
+.slider-next-frame{
+	right: 0;
+	border-radius: 3px 0px 0px 3px;
+}
+
+//main-page-section frame
+
+.section-title{
+	p{
+		font-family: $hand-written-font;
+		font-weight: bold;
+		font-size: 33px;
+		line-height: 45px;
+		color: $warning;
+		margin-bottom: 0;
+	}
+	h2{
+		margin-bottom: 0;
+		line-height: rem(55);
+	}
+}

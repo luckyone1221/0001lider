@@ -2,17 +2,29 @@ extends layout/main.pug
 
 
 include ../blocks/sContent/_sContent.pug
-include ../blocks/sContact/_sContact.pug 
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sMap/_sMap.pug
+
+include ../blocks/sMainSlider/_sMainSlider.pug
+include ../blocks/sProfit/_sProfit.pug
+include ../blocks/sLastProjects/_sLastProjects.pug
+include ../blocks/sUsedMaterials/_sUsedMaterials.pug
+include ../blocks/Calculator/_Calculator.pug
+
 
 block variables
 	- let  mainPage= null
 block title
-	- let  title= 'title'
+	- let  title= 'главная'
 	title= title
 block pagecontent
 	+header()
 	+mobMenu2()
-	+headerBlock()
-	+sForm()
-	+sContact()
+	+sMainSlider()
+	+sProfit()
+	+sLastProjects()
+	+sUsedMaterials()
+	+Calculator()
+	+sMap()
 	+footer()

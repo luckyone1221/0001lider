@@ -1,0 +1,33 @@
+mixin sUsedMaterials()
+	// start sUsedMaterials
+	+b.SECTION.sUsedMaterials.section#sUsedMaterials&attributes(attributes)
+		+e.grid-container
+			.left-line-cont.d-none.d-md-block
+			.right-line-cont.d-none.d-md-block
+		+e.inner-cont.container
+			+b.section-title
+				p Современные технологии строительства
+				h2 Используемые материалы
+				span.afrer-txt Мы строим дома по следующим технологиям:
+			+e.materials-row.row
+				+commonMaterialPill('1', 'Газобетон')
+				+commonMaterialPill('2', 'Тёплая керамика')
+				+commonMaterialPill('3', 'Монолитное строительство')
+				+commonMaterialPill('4', 'Керамзитобетон')
+				+commonMaterialPill('5', 'глиняный кирпич')
+				+e.A.card-col.last-col.col-12.col-sm-6.col-lg-4(href='#')
+					span.last-pill-headline Нужны только качественные материалы и технологии?
+					p.last-pill-txt Оставьте заявку, и мы ответим на все интересущие Вас вопросы и расскажем про все наши услуги
+					.place-order-for-look-btn Оставить заявку
+					.phone-img-box.d-none.d-md-flex
+						+icon('big-phone-used-m')
+	// end sUsedMaterials
+
+
+mixin commonMaterialPill(i, mName='mName')
+	+e.A.card-col.col-12.col-sm-6.col-lg-4(href='#')
+		+e.top-line
+			span.number= "0" + i
+			.img-container
+				img(src=`img/@2x/sMaterial-${i}.png` alt="")
+		+e.P.material-name= mName

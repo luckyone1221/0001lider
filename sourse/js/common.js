@@ -205,7 +205,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/03.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -377,6 +377,25 @@ function eventHandler() {
 		dropdownCssClass: "drop-down-catalog-header",
 	});
 
+	function allWaysShowSelect() {
+		let allSelects = document.querySelectorAll('.select2-container');
+		for (let select of allSelects){
+			let placeholder = select.querySelector('.select2-selection__placeholder');
+			select.CustomPropPlaceholder = placeholder;
+			select.addEventListener('click', putPlaceholderBack);
+		}
+	}
+	function putPlaceholderBack(){
+		let placeholderPresent =  this.querySelector('.select2-selection__placeholder');
+		if (!placeholderPresent){
+			let renderedBlock = this.querySelector('.select2-selection__rendered');
+			renderedBlock.innerHTML = '';
+			renderedBlock.appendChild(this.CustomPropPlaceholder);
+		}
+	}
+	allWaysShowSelect();
+
+
 	//for mob filter
 	$('.filters-block__filter-mob-bar').click(function () {
 		$('body').addClass('fixed-on-filter-js');
@@ -399,6 +418,7 @@ function eventHandler() {
 	let bigSliderThumb = new Swiper('.big-slider-thumb-js', {
 		slidesPerView: '5',
 		spaceBetween: 10,
+		loop: true,
 	});
 
 	let bigSlider = new Swiper('.big-slider-js', {
@@ -416,6 +436,18 @@ function eventHandler() {
 			loadPrevNext: true,
 		},
 		on : {
+			init : function () {
+				let getMomentSliderCreated = window.setInterval(function () {
+					if (bigSlider){
+						// here we recive bigSlider, dont need interval anymore
+						window.clearInterval(getMomentSliderCreated);
+						//ater mounted callback
+						let amountOfSlides = document.querySelector('.big-slider-js-pugin').children.length;
+						let BigSliderFractPugMax = document.querySelector('.big-slider-js-custom-fractional-pugin .max');
+						BigSliderFractPugMax.innerHTML = addZero(amountOfSlides);
+					}
+				},100);
+			},
 			slideChange: function () {
 				if (bigSlider){
 					//index of curr slide start from 0
@@ -430,14 +462,6 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
-	
-	function setMaxSlides() {
-		let amountOfSlides = document.querySelector('.big-slider-js-pugin').children.length;
-		let BigSliderFractPugMax = document.querySelector('.big-slider-js-custom-fractional-pugin .max');
-		BigSliderFractPugMax.innerHTML = addZero(amountOfSlides);
-	}
-	setMaxSlides();
-
 
 	function addZero(num) {
 		num = Number(num);
@@ -446,6 +470,57 @@ function eventHandler() {
 		}
 		return num
 	}
+	//main page
+	let mainSlider = new Swiper('.main-slider-js', {
+		slidesPerView: '1',
+		loop: true,
+		navigation: {
+			nextEl: '.main-slider-next',
+			prevEl: '.main-slider-prev',
+		},
+		lazy: {
+			loadPrevNext: true,
+		},
+		on : {
+			init : function () {
+				let getMomentSliderCreated = window.setInterval(function () {
+					if (mainSlider){
+						// here we recive bigSlider, dont need interval anymore
+						window.clearInterval(getMomentSliderCreated);
+						//ater mounted callback
+						let amountOfSlides = document.querySelector('.main-slider-js-pugin').children.length;
+						let SliderFractPugMax = document.querySelector('.main-slider-js-custom-fractional-pugin .max');
+						SliderFractPugMax.innerHTML = addZero(amountOfSlides);
+					}
+				},100);
+			},
+			slideChange: function () {
+				if (mainSlider){
+					//index of curr slide start from 0
+					let BigSliderFractPugCurrent = document.querySelector('.main-slider-js-custom-fractional-pugin .current');
+					BigSliderFractPugCurrent.innerHTML = addZero(mainSlider.realIndex + 1);
+				}
+			},
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.main-slider-js-pugin'),
+			clickable: true,
+		},
+	});
+	//last project slider
+	let lastProjectSlider = new Swiper('.last-project-js', {
+		slidesPerView: '1',
+		spaceBetween: 10,
+		loop: true,
+		//pagination
+		pagination: {
+			el: $(this).find('.last-project-slider-js-pugin'),
+			clickable: true,
+		},
+	});
+
+
 	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 		if (isIE11) {

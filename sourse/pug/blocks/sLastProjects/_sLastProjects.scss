@@ -1,0 +1,90 @@
+// start .sLastProjects
+.sLastProjects {
+	padding: 0;
+	background-color: $light-white;
+	&__inner-cont{
+		padding-top: 76px;
+		padding-left: 0;
+		padding-right: 0;
+
+		padding-bottom: 85px;
+
+		max-width: calc(100% - 30px);
+		position: relative;
+		border-left: 1px solid $border-container-color;
+		border-right: 1px solid $border-container-color;
+		@extend .strip-in-middle;
+		.section-title{
+			padding-bottom: 46px; //??
+			position: relative;
+			z-index: 2;
+
+			p{
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	.catalog-square-items-container{
+		margin-bottom: 0;
+	}
+
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sLastProjects
+
+//.last-project-slider
+
+.last-project-slider{
+	position: relative;
+	width: calc(100% + 2px);
+	left: -1px;
+	padding-bottom: 90px;
+
+	.last-project-slider-js-pugin{
+		position: absolute;
+		top: calc(100% - 60px);
+		left: 0;
+		width: 100%;
+		text-align: center;
+	}
+	.swiper-container{
+		overflow: visible;
+		position: relative;
+	}
+
+	.swiper-slide{
+		.catalog-square-item{
+			padding: 0;
+			&__content{
+				box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+			}
+			&__content-part{
+				background-color: $white;
+			}
+		}
+	}
+}

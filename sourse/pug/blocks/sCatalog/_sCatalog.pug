@@ -179,6 +179,7 @@ mixin catalogSquareItems(itemClasses)
 			+catalogSuareItem()
 			+catalogSuareItem()
 
+
 mixin catalogSuareItem()
 	+b.catalog-square-item.col-sm-6.col-lg-4
 		+e.content
@@ -215,6 +216,35 @@ mixin catalogSuareItem()
 					+e.A.avaliable-option-link(href="#") Балкон
 					+e.A.avaliable-option-link(href="#") Терраса
 					+e.A.avaliable-option-link(href="#") Мансардные окна
+				+e.price-bl
+					span.price-txt Цена:
+					span.price-value 3 520 500
+					span.price-money-txt рублей
+				+e.A.show-more(href="#")
+					.inner-cont
+						span Подробнее о проекте
+						+icon('small-blue-arrow-right')
+
+mixin catalogSquareItemsForIndex00(itemClasses)
+	.catalog-square-items-container.row(class=itemClasses)
+		+catalogSuareItemForIndex00(1,'2-х этажный котедж с двумя гаражами')
+		+catalogSuareItemForIndex00(2,'Современный коттедж для небольшой семьи с гаражем')
+		+catalogSuareItemForIndex00(3,'Новый дом с бассейном и собственным садом')
+		+catalogSuareItemForIndex00(4,'Личный проект для мэра города от нашей компании')
+		+catalogSuareItemForIndex00(5,'Дом для загороднего отдыха всей семьей')
+		+catalogSuareItemForIndex00(6,'Коттедж в 3 этажа под гостиничный бизнес')
+
+mixin catalogSuareItemForIndex00(imgNum=1, headerTxt='2-х этажный котедж с гаражем', descrTxt="Современная планировка дома и качественные материалы при строительстве")
+	+b.catalog-square-item.col-sm-6.col-lg-4
+		+e.content
+			+e.A.img-part(href="#")
+				img.house-img(src=`img/@2x/inedx-last-project-${imgNum}.png` alt="")
+			+e.content-part
+				+e.A.location-link(href='#')
+					+icon('small-blue-location')
+					span Нижний Новгород
+				+e.A.card-header(href="#")=headerTxt
+				+e.P.card-descr-par=descrTxt
 				+e.price-bl
 					span.price-txt Цена:
 					span.price-value 3 520 500

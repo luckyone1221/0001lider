@@ -1,0 +1,315 @@
+// start .sMainSlider
+.sMainSlider {
+	//height: 800px;//?
+	padding: 0;
+	margin: 0;
+	position: relative;
+	margin-bottom: 8px;
+	&:after{
+		content: '';
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		height: 8px;
+		background-color: $warning;
+	}
+
+	//lines grid
+	&__grid-box{
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		display: flex;
+
+		//
+		.left-line-cont, .right-line-cont{
+			width: 50%;
+			opacity: 0;
+			@include media-breakpoint-up(md){
+				opacity: 1;
+			}
+		}
+		.left-line-cont{
+			background:
+			linear-gradient(to top left,
+				rgba(0,0,0,0) 0%,
+				rgba(0,0,0,0) calc(50% - 1px),
+				$border-container-color calc(50% - 0.5px),
+				$border-container-color calc(50% + 0.5px),
+				rgba(0,0,0,0) calc(50% + 1px),
+				rgba(0,0,0,0) 100%);
+		}
+		.right-line-cont{
+			background:
+				linear-gradient(to top right,
+					rgba(0,0,0,0) 0%,
+					rgba(0,0,0,0) calc(50% - 1px),
+					$border-container-color calc(50% - 0.5px),
+					$border-container-color calc(50% + 0.5px),
+					rgba(0,0,0,0) calc(50% + 1px),
+					rgba(0,0,0,0) 100%);
+		}
+		//
+		.grid-container-box{
+			position: absolute;
+			z-index: 2;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.grid-container{
+			height: 100%;
+			border-left: 1px solid $border-container-color;
+			border-right: 1px solid $border-container-color;
+			@extend .strip-in-middle;
+
+			@include media-breakpoint-only(xs){
+				max-width: calc(100% - 30px);
+			}
+
+			padding-left: 0;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-start;
+		}
+	}
+
+	//prev, next
+
+	//
+
+	.swiper-container{
+		position: relative;
+		z-index: 3;
+		min-height: 100%;//?
+		width: 100%;//?
+	}
+	.swiper-wrapper{
+
+	}
+	.swiper-slide{
+		//justify height
+		height: auto;
+	}
+
+	&__{}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sMainSlider
+
+
+//slide
+.swiper-slide-cont{
+	display: flex;
+	position: relative;
+	min-height: 100%;
+	width: 100%;
+	//img bg
+	&__img-container{
+		position: absolute;
+		//background-color: blue;
+		width: 50%;
+		height: 100%;
+		right: 0;
+		top: 0;
+		img{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	//
+	&__inner-container{
+		padding-left: 0;
+		padding-right: 0;
+		display: flex;
+		flex-direction: column;
+		max-width: calc(100% - 30px);
+
+		@include media-breakpoint-up(md){
+			min-height: 600px;
+		}
+
+		@include media-breakpoint-up(xl){
+			min-height: 800px;
+		}
+	}
+
+	&__slide-content{
+		//background-color: pink;
+		margin-top: auto;
+		margin-bottom: auto;
+
+		padding-top: 52px;
+		padding-bottom: 150px;
+		@include media-breakpoint-up(md){
+			padding-top: 51px;
+			padding-bottom: 150px;
+		}
+	}
+
+	&__slide-title{
+		font-family: $hand-written-font;
+		font-weight: bold;
+		color: $warning;
+		padding-bottom: 10px;
+
+		font-size: 25px;
+		line-height: 24px;
+		@include media-breakpoint-up(md){
+			font-size: 33px;
+			line-height: 45px;
+		}
+	}
+	&__slide-headline{
+		max-width: 830px;
+
+		padding-bottom: 15px;
+		@include media-breakpoint-up(md){
+			padding-bottom: 18px;
+		}
+
+		span{
+			font-weight: bold;
+			font-size: 25px;
+			line-height: 35px;
+
+			@include media-breakpoint-up(md){
+				display: block;
+				font-size: 45px;
+				line-height: 55px;
+			}
+		}
+		.black-txt{
+			color: $body-color;
+		}
+		.yellow-txt{
+			color: $warning;
+		}
+	}
+	//
+	&__slide-descr{
+		max-width: 430px;
+
+		font-size: 15px;
+		line-height: 21px;
+		margin-bottom: 33px;
+		@include media-breakpoint-up(md){
+			font-size: 20px;
+			line-height: 27px;
+			margin-bottom: 28px;
+		}
+	}
+	//
+	&__get-calc-btn{
+		@extend .btn;
+		@extend .btn-warning;
+		padding: 0 35px;
+
+		height: 70px;
+		line-height: 70px;
+		font-weight: bold;
+		font-size: 16px;
+		color: $black;
+
+		width: 100%;
+		@include media-breakpoint-up(sm){
+			width: auto;
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+}
+
+.pagination-wrapper1{
+	position: relative;
+}
+
+//bullets, fract pugin
+.pugination-container{
+	//background-color: #00d600;
+
+
+	width: 100%;
+	@include media-breakpoint-up(md){
+		width: auto;
+	}
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	flex-direction: column;
+
+	padding-bottom: 31px; // ??
+	padding-top: 15px;
+	@include media-breakpoint-up(md){
+		flex-direction: row;
+		padding-bottom: 86px;
+	}
+	.main-slider-js-pugin{
+		position: relative;
+
+		margin-bottom: 9px;
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+			margin-right: 95px; // 108px -7.5px
+			left: -7.5px;
+		}
+	}
+	.main-slider-js-custom-fractional-pugin{
+		span{
+			line-height: 1;
+		}
+		.current{
+			color: $primary;
+			font-size: 20px;
+			font-weight: 500;
+		}
+		.slash{
+			font-size: 18px;
+		}
+		.max{
+			font-size: 18px;
+		}
+	}
+}

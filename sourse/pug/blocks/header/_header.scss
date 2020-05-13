@@ -127,6 +127,7 @@
 			}
 		}
 		&__phone-link{
+			text-decoration: none !important;
 			height: rem(24px);
 			display: flex;
 			align-items: center;
@@ -207,14 +208,14 @@
 				position: absolute;
 			}
 			span:before {
-				top: 5px;
+				top: 6.5px;
 				//background-color: green;
 				width: 20.5px;
 				right: 0;
 				transition: width $transition-before-width ease-in-out 0s, top $other-transition ease-in-out $transition-before-width, transform $other-transition ease-in-out $transition-before-width;
 			}
 			span:after {
-				bottom: 5px;
+				bottom: 6.5px;
 				left: 0;
 				transition: bottom $other-transition ease-in-out $transition-before-width, transform $other-transition ease-in-out $transition-before-width;
 			}
