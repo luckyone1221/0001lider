@@ -1,0 +1,32 @@
+mixin sAskEngineer()
+	// start sAskEngineer
+	+b.sAskEngineer.section#sAskEngineer&attributes(attributes)
+		+e.grid-container.black-grid-container-frame
+			.left-line-cont.d-none.d-md-block
+			.right-line-cont.d-none.d-md-block
+			+e.strip-container-box
+				+e.strip-container.container
+		+e.inner-cont.container
+			.ask-engineer-from
+				+form-wrap()
+					+e.headline
+						span="Задать вопрос "
+						span нашему инженеру!
+					+e.input-row
+						+input('Иван Иванов', 'text', 'Ваше имя:', 'name-input')
+						+input('+7 (___) ___ - __ - __', 'tel', 'Ваш телефон:', 'phone-input')
+						+input('Здесь Вы можете написать обо всём что вас интересует', 'textarea', 'Ваш вопрос инженеру:', 'message-textarea')
+					//-copy pastel
+					+e.LABEL.personal-data-agreement
+						input.hidden-checkbox(type="checkbox" checked="checked")
+						span.custom-checkbox-cont
+							+icon('check-classic')
+						span.checkbox-description Я согласен на обработку своих персональных данных согласно политики конфиденциальности
+					+e.lower-strip
+						+e.BUTTON.get-consultation-btn(type='submit') Отправить вопрос инженеру
+						+e.introduction-message
+							span Александр Верещагин
+							span Главный инженер проектов, опыт 11 лет
+		+e.ingineer-foto-cont
+			img(src="img/@2x/engineer-foto-sliced.png" alt="")
+	// end sAskEngineer

@@ -25,6 +25,7 @@ mixin CalcStep1()
 			+stepContent()
 				+stepContentHeader()
 				+stepContentTopLine()
+				+stepContentFooter()
 			+stepPreview()
 
 mixin calculatorHeader()
@@ -133,3 +134,10 @@ mixin stepPreview(hasResultPriceBaner=true)
 		+e.A.order-project-btn(href="#") Заказать проект
 
 
+mixin stepContentFooter(hasNextStep=true)
+	+b.step-content-footer
+		+e.estimate-btn(href="#") Заказать полную смету
+		if hasNextStep
+			+e.next-step-btn(href='#')
+				span Следующий пункт
+				+icon('angle-right')

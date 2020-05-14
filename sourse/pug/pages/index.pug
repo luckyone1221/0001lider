@@ -12,6 +12,11 @@ include ../blocks/sLastProjects/_sLastProjects.pug
 include ../blocks/sUsedMaterials/_sUsedMaterials.pug
 include ../blocks/Calculator/_Calculator.pug
 
+include ../blocks/sEstimateDiscount/_sEstimateDiscount.pug
+include ../blocks/sAgreementAndFee/_sAgreementAndFee.pug
+include ../blocks/sSimpleSteps/_sSimpleSteps.pug
+include ../blocks/sProblems/_sProblems.pug
+include ../blocks/sAskEngineer/_sAskEngineer.pug
 
 block variables
 	- let  mainPage= null
@@ -26,5 +31,10 @@ block pagecontent
 	+sLastProjects()
 	+sUsedMaterials()
 	+Calculator()
+	+sEstimateDiscount()
+	+sAgreementAndFee()
+	+sSimpleSteps()
+	+sProblems()
+	+sAskEngineer()
 	+sMap()
 	+footer()

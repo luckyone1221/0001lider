@@ -1,0 +1,220 @@
+// start .sAgreementAndFee
+.sAgreementAndFee {
+	padding: 0;
+	&__inner-cont{
+		border-left: 1px solid $border-container-color;
+		border-right: 1px solid $border-container-color;
+		position: relative;
+		max-width: calc(100% - 30px);
+		@extend .strip-in-middle;
+
+		padding: 47px 0 55px 0;
+		@include media-breakpoint-up(sm){
+			padding: 94px 0 67px 0;
+		}
+	}
+
+	&__inner-row{
+		@include roww(0);
+	}
+	&__img-col{
+		display: flex;
+		padding-top: 45px;
+		img{
+			margin: 0 auto auto auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	//content
+	&__conent-col{
+		@include media-breakpoint-up(md){
+			padding-left: 38px;
+		}
+	}
+	&__title-bl{
+		p{
+			font-weight: bold;
+			font-family: $hand-written-font;
+			color: $warning;
+
+			font-size: 25px;
+			line-height: 26px;
+			margin-bottom: 6px;
+			@include media-breakpoint-up(sm){
+				font-size: 33px;
+				line-height: 45px;
+				margin-bottom: 0px;
+			}
+		}
+		h2{
+			font-weight: bold;
+			margin-bottom: 28px;
+
+			font-size: 25px;
+			line-height: 32px;
+			@include media-breakpoint-up(sm){
+				font-size: 40px;
+				line-height: 55px;
+			}
+		}
+	}
+	//tabs
+	&__content-tabs{
+
+	}
+	&__content-tabs-caption{
+		display: flex;
+
+		justify-content: space-between;
+		@include media-breakpoint-up(md){
+			justify-content: flex-start;
+		}
+
+		padding-bottom: 20px;
+		@include media-breakpoint-up(lg){
+			padding-bottom: 28px;
+		}
+	}
+	&__content-tabs-caption-item{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 57px;
+		text-align: center;
+		border-radius: $border-radius;
+		font-weight: bold;
+		color: $body-color;
+		background-color: $light;
+
+		font-size: 12px;
+		padding: 0;
+		min-width: calc(50% - 2px);
+		margin-right: 0px;
+		@include media-breakpoint-up(md){
+			font-size: 14px;
+			padding: 0 22px;
+			min-width: 173px;
+			margin-right: 17px;
+		}
+		@include mt();
+		&:hover{
+			box-shadow: 0 5px 12px -2px $light;
+		}
+		&.active{
+			background-color: $warning;
+			color: $black;
+
+			&:hover{
+				box-shadow: none;
+			}
+		}
+	}
+	//
+	&__mobile-img-block{
+		display: flex;
+		padding-bottom: 18px;
+
+		img{
+			margin: auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	//
+	&__content-tabs-content{}
+
+	&__content-tabs-content-item{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
+	&__txt-cont{
+		p {
+			color: $body-color;
+			margin-bottom: 0;
+
+
+			font-size: 14px;
+			line-height: 19px;
+			padding-bottom: 14px;
+			@include media-breakpoint-up(sm){
+				font-size: 18px;
+				line-height: 25px;
+				padding-bottom: 16px;
+			}
+		}
+		p:last-child{
+			padding-bottom: 28px;
+			@include media-breakpoint-up(sm){
+				padding-bottom: 33px;
+			}
+		}
+	}
+	&__download-btn{
+		@extend .btn;
+		@extend .btn-warning;
+
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 70px;
+		width: auto;
+		padding: 0;
+
+
+		min-width: 100%;
+		@include media-breakpoint-up(md){
+			min-width: 307px;
+		}
+		.icon{
+			font-size: 20px;
+			color: $black;
+			margin-right: 8px;
+		}
+		span{
+			font-size: 16px;
+			line-height: 20px;
+			color: $black;
+		}
+
+	}
+	//
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sAgreementAndFee

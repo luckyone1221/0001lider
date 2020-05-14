@@ -676,3 +676,55 @@
 	&__{}
 	&__{}
 }
+
+//step-content-footer
+
+.step-content-footer{
+	padding-top: 23px;
+
+
+	@include media-breakpoint-up(sm){
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__estimate-btn{
+		@extend .btn;
+		@extend .btn-warning;
+
+		height: 70px;
+		line-height: 70px;
+		padding: 0;
+		position: relative;
+		margin: 0 -20px 17px -20px;
+		width: calc(100% + 40px);
+
+		@include media-breakpoint-up(sm){
+			margin: 0;
+			width: auto;
+			height: 52px;
+			line-height: 52px;
+			padding: 0 22px;
+		}
+	}
+
+	&__next-step-btn{
+		@extend .btn;
+		@extend .btn-secondary;
+
+		padding: 0 16px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.icon{
+			font-size: 12px;
+			margin-left: 12px;
+			line-height: 1;
+		}
+		span{
+			font-size: 14px;
+			line-height: 1;
+		}
+	}
+}

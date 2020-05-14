@@ -519,7 +519,52 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
+	//estimate js
+	$('.sEstimateDiscount__img-container').click(function () {
+		//this.siblings()
+		this.parentElement.querySelector('a, button').click();
+	});
+	//agreementAndFee js
+	function makeItemEqHeight(querySelector) {
+		let items = document.querySelectorAll(querySelector);
+		let maxHeight = 0;
+		for (let item of items){
+			item.style.minHeight = 0;
+			let itemHeight = $(item).height();
+			if (maxHeight < itemHeight){
+				maxHeight = itemHeight;
+			}
+		}
+		for (let item of items){
+			item.style.minHeight = maxHeight + "px";
+		}
+	}
+	makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
+	window.addEventListener('resize',makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), { passive: true });
+	//problems slider
 
+	let problemsSlider = new Swiper('.problems-slider-js', {
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+				spaceBetween: 10
+			},
+			576: {
+				slidesPerView: 'auto',
+				spaceBetween: 15,
+			}
+		},
+		//loop: true,
+		navigation: {
+			nextEl: '.problem-slider-next',
+			prevEl: '.problem-slider-prev',
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.problem-slider-js-pugin'),
+			clickable: true,
+		},
+	});
 
 	//
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

@@ -34,38 +34,7 @@
 			}
 		}
 
-	&__grid-container{
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		.left-line-cont, .right-line-cont{
-			width: 50%;
-			height: 100%;
-		}
-		.left-line-cont{
-			background:
-				linear-gradient(to bottom left,
-					rgba(0,0,0,0) 0%,
-					rgba(0,0,0,0) calc(50% - 1px),
-					$sUserMat-bord-col calc(50% - 0.5px),
-					$sUserMat-bord-col calc(50% + 0.5px),
-					rgba(0,0,0,0) calc(50% + 1px),
-					rgba(0,0,0,0) 100%);
-		}
-		.right-line-cont{
-			background:
-				linear-gradient(to bottom right,
-					rgba(0,0,0,0) 0%,
-					rgba(0,0,0,0) calc(50% - 1px),
-					$sUserMat-bord-col calc(50% - 0.5px),
-					$sUserMat-bord-col calc(50% + 0.5px),
-					rgba(0,0,0,0) calc(50% + 1px),
-					rgba(0,0,0,0) 100%);
-		}
-	}
+
 	//materials-row
 	&__materials-row{
 		@include roww(0);

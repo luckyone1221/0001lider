@@ -1,0 +1,17 @@
+mixin sEstimateDiscount()
+	// start sEstimateDiscount
+	+b.SECTION.sEstimateDiscount#sEstimateDiscount&attributes(attributes)
+		+e.grid-container.black-grid-container-frame
+			.left-line-cont.d-none.d-md-block
+			.right-line-cont.d-none.d-md-block
+		+e.inner-cont.container
+			+e.H2.headline
+				span='Даем скидку '
+				span на смету конкурента!
+			+e.P.afrer-txt Отправьте ее нам для расчета и получите от нас выгодную скидку на строительство
+			+e.send-estimate-btn-cont
+				+e.A.send-estimate-btn(href="#") Отправить смету
+				+e.img-container
+					img(src="img/@2x/estimate-img-sliced.png" alt="")
+
+	// end sEstimateDiscount

@@ -1,0 +1,30 @@
+mixin sSimpleSteps()
+	// start sSimpleSteps
+	+b.SECTION.sSimpleSteps.section#sSimpleSteps&attributes(attributes)
+		+e.inner-cont.container
+			+b.section-title
+				p Простые шаги к новому дому
+				h2 Этапы работы с нами
+			+b.profit-pills-row.row
+				+commonSimpleStepsPill(1, 'Первый этап', ['Встреча с архитектором','Концепция проекта','Расчет стоимости',])
+				+commonSimpleStepsPill(2, 'Второй этап', ['Договор на проектирование','Проектные работы'])
+				+commonSimpleStepsPill(3, 'Третий этап', ['Сметный расчет на основании проекта','Заключение договора строительного подряда'])
+				+commonSimpleStepsPill(4, 'Четвертый этап', ['Подготовка строительной площадки','Заезд строительной бригады'])
+				+commonSimpleStepsPill(5, 'Пятый этап', ['Основные строительно-монтажные работы','Акты выполненных работ'])
+				+e.A.card-col.last-col.last-simple-step-col.col-12.col-sm-6.col-lg-4(href='#')
+					span.last-pill-headline Хотите ознакомиться подробнее со всеми этапами работы с нами?
+					.place-order-for-look-btn Читать подробнее
+	// end sSimpleSteps
+
+
+mixin commonSimpleStepsPill(i, headline, subSteps=['1','2','3'])
+	+e.A.card-col.col-12.col-sm-6.col-lg-4(href='#')
+		+e.top-line
+			.img-box
+				img(src=`img/simple-steps-pills-${i}.svg` alt='')
+			.pill-number= "0" + i
+		+e.SPAN.pill-headline=headline
+		+e.UL.substeps-list
+			- for (let subStep of subSteps) {
+				li=subStep
+			- }

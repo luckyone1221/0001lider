@@ -1,0 +1,39 @@
+mixin sProblems()
+	// start sProblems
+	+b.SECTION.sProblems#sProblems&attributes(attributes)
+		+e.grid-box
+			+e.grid-cont.container
+		+e.inner-cont.container
+			+b.section-title
+				p А Вы знаете?
+				h2 Проблемы которые могут Вас ждать
+		+b.problems-slider-container
+			.problem-slider-prev.slider-prev-frame.d-none.d-xxl-flex
+				+icon("slider-prev")
+			.problem-slider-next.slider-next-frame.d-none.d-xxl-flex
+				+icon("slider-next")
+			+e.slider-container.container
+				.problem-slider-js-pugin.swiper-bullets-frame
+				.swiper-container.problems-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+problemSlide("problem-slider-1.jpg", 'Геология', 'Разрушение фундамента', 'Мы всегда проводим геологически исследования грунта, чтобы подобрать фундамент для вашего дома.')
+						.swiper-slide
+							+problemSlide("problem-slider-2.jpg", 'Усадка деревянного дома', 'Деньги на ветер', 'При незнание специфики материалов вы рискуете сделать отделку, которая окажется преждевременной из-за усадки дома и через 6 месяцев ее придется изменить. Применяя современные технологии мы можем сократить время усадки, что приблизит нас к дате готовности дома.')
+						.swiper-slide
+							+problemSlide("problem-slider-3.jpg", 'Увеличение сроков', 'Потраченное время', 'Все наши конструкторы практики и довели от проекта до постройки более 300 клиентов. Мы не привлекаем подрядчиков, так как у нас есть своя команда прорабов и мастеров с профильным опытом работы минимум 10 лет.')
+						.swiper-slide
+							+problemSlide("problem-slider-3.jpg", 'Увеличение сроков4', 'Потраченное время', 'Все наши конструкторы практики и довели от проекта до постройки более 300 клиентов. Мы не привлекаем подрядчиков, так как у нас есть своя команда прорабов и мастеров с профильным опытом работы минимум 10 лет.')
+						.swiper-slide
+							+problemSlide("problem-slider-3.jpg", 'Увеличение сроков5', 'Потраченное время', 'Все наши конструкторы практики и довели от проекта до постройки более 300 клиентов. Мы не привлекаем подрядчиков, так как у нас есть своя команда прорабов и мастеров с профильным опытом работы минимум 10 лет.')
+						.swiper-slide
+							+problemSlide("problem-slider-3.jpg", 'Увеличение сроков6', 'Потраченное время', 'Все наши конструкторы практики и довели от проекта до постройки более 300 клиентов. Мы не привлекаем подрядчиков, так как у нас есть своя команда прорабов и мастеров с профильным опытом работы минимум 10 лет.')
+	// end sProblems
+
+mixin problemSlide(slideImg="problem-slider-1.jpg", titleTxt='lalala', headlineTxt='lalala', slideTxt="lalala")
+	+e.A.problem-slide(href="#")
+		+e.slide-img-container
+			img(src=`img/@2x/${slideImg}` alt="")
+		+e.slide-title=titleTxt
+		+e.slide-headline=headlineTxt
+		+e.P.slide-txt=slideTxt

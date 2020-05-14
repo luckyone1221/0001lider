@@ -1,0 +1,278 @@
+// start .sAskEngineer
+.sAskEngineer {
+	padding: 0;
+	background-color: $body-color;
+	position: relative;
+
+	//grid+
+	&__strip-container-box{
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: transparent;
+	}
+	&__strip-container{
+		//background-color: red;
+		height: 100%;
+		position: relative;
+		z-index: 1;
+		max-width: calc(100% - 30px);
+		border-left: 1px solid $sUserMat-bord-col;
+		border-right: 1px solid $sUserMat-bord-col;
+	}
+	//ingineer
+	&__ingineer-foto-cont{
+		z-index: 3;
+		right: 0;
+
+		position: relative;
+		top: 0;
+		@include media-breakpoint-up(lg){
+			position: absolute;
+			width: 40%;
+			top: 0;
+			height: 100%;
+		}
+		@include media-breakpoint-up(xl){
+			width: 50%;
+			top: -100px;
+			height: calc(100% + 100px);
+		}
+
+		display: flex;
+		img{
+			max-width: 100%;
+
+			max-height: 400px;
+			margin: auto auto 0 auto;
+			@include media-breakpoint-up(lg){
+				margin: auto 0 0 60px;
+				max-height: 100%;
+			}
+		}
+	}
+	//
+	&__inner-cont{
+		position: relative;
+		z-index: 4;
+		max-width: calc(100% - 30px);
+
+		padding: 47px 0 20px 0;
+		@include media-breakpoint-up(lg){
+			padding: 74px 0 86px 0;
+		}
+	}
+	&__{}
+	&__{}
+
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sAskEngineer
+
+//form-style
+.ask-engineer-from{
+
+	//form-wrap
+	.form-wrap{
+
+		&__headline{
+			max-width: 700px;
+			padding-bottom: 26px;
+			span{
+				font-weight: bold;
+				text-shadow: 0px 4px 5px rgba(0, 0, 0, 0.19);
+
+				font-size: 35px;
+				line-height: 41px;
+				@include media-breakpoint-up(md){
+					font-size: 40px;
+					line-height: 55px;
+				}
+				@include media-breakpoint-up(lg){
+					font-size: 55px;
+					line-height: 62px;
+				}
+			}
+			span:first-child{
+				color: $warning;
+			}
+			span:last-child{
+				color: $white;
+			}
+		}
+
+		//input-row
+		&__input-row{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+
+			@include media-breakpoint-up(lg){
+				max-width: 558px;
+			}
+		}
+		//
+		&__input-wrap{
+			@extend .black-inp-form-wrap-frame;
+
+			width: 100% !important;
+			@include media-breakpoint-up(sm){
+				width: calc(50% - 15px) !important;
+			}
+			@include media-breakpoint-up(lg){
+				width: 264px;
+			}
+			margin-right: 0 !important;
+			&:last-child{
+				width: 100% !important;
+			}
+
+			textarea.form-wrap__input{
+				height: 100px;
+				font-size: 16px;
+				line-height: 20px;
+				padding: 19px 21px;
+				@include placeholder{
+					font-size: 16px;
+					line-height: 20px;
+				}
+			}
+		}
+		//
+		&__personal-data-agreement{
+			@extend .personal-data-agreement-frame;
+			margin-bottom: 0px;
+
+			padding-bottom: 30px !important;
+			.checkbox-description{
+				@include media-breakpoint-up(lg){
+					max-width: 500px;
+				}
+			}
+		}
+		//
+		&__lower-strip{
+			font-size: 0;
+		}
+		&__get-consultation-btn{
+			@extend .btn;
+			@extend .btn-warning;
+			height: 70px;
+			line-height: 70px;
+			font-weight: bold;
+			color: $black;
+
+			font-size: 14px;
+			padding: 0;
+			margin-right: 30px;
+
+
+			width: 100%;
+			margin-top: 0px;
+			margin-bottom: 26px;
+			@include media-breakpoint-up(lg){
+				width: auto;
+				margin-top: 7px;
+				margin-bottom: 10px;
+			}
+			@include media-breakpoint-up(md){
+				//margin-bottom: 0px;
+			}
+			@include media-breakpoint-up(sm){
+				font-size: 16px;
+				padding: 0 24px;
+			}
+		}
+		&__introduction-message{
+			display: inline-block;
+			vertical-align: top;
+			position: relative;
+			background-color: #343F47;
+			box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.18);
+			border-radius: $border-radius;
+
+			width: 100%;
+
+			padding: 13px 16px 13px 12px;
+			@include media-breakpoint-up(lg){
+				padding: 15px 20px 15px 20px;
+				width: auto;
+			}
+			@include media-breakpoint-up(xl){
+				padding: 15px 25px 18px 21px;
+			}
+
+			&:after{
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-style: solid;
+
+				left: calc(50% - 8px);
+				top: 100%;
+				border-width: 16px 9px 0 9px;
+				border-color: #343F47 transparent transparent transparent;
+				@include media-breakpoint-up(lg){
+					left: 100%;
+					top: calc(50% - 9px);
+					border-width: 9px 0 9px 16px;
+					border-color: transparent transparent transparent #343F47;
+				}
+			}
+			span{
+				display: block;
+			}
+			span:first-child{
+				font-weight: bold;
+				color: $warning;
+
+				font-size: 14px;
+				line-height: 19px;
+				@include media-breakpoint-up(sm){
+					font-size: 20px;
+					line-height: 27px;
+				}
+			}
+			span:last-child{
+				color: $white;
+
+				font-size: 14px;
+				line-height: 19px;
+				@include media-breakpoint-up(sm){
+					font-size: 16px;
+					line-height: 22px;
+				}
+			}
+
+		}
+		&__{}
+	}
+}
