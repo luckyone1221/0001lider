@@ -70,6 +70,11 @@ mixin filterSelect(selectName, optionsArr=['1', '2', '3'], placeholder='Этаж
 		- for (let item of optionsArr)
 			option(value=item)=item
 
+mixin filterSelectWithoutPH(selectName, optionsArr=['1', '2', '3'], keyClass='custom-select2')
+	select.discard-always-show-PH(name=selectName class=keyClass)
+		- for (let item of optionsArr)
+			option(value=item)=item
+
 	//-catalog block mixins
 mixin catalogBlock(TableBtnClass, squareBtnClass)
 	+b.catalog-block

@@ -1,0 +1,49 @@
+mixin sFeedback()
+	// start sFeedback
+	+b.SECTION.sFeedback#sFeedback&attributes(attributes)
+		+e.grid-box
+			+e.grid-cont.container
+		+e.inner-cont.container
+			+b.section-title
+				p Из уст других людей
+				h2
+					span(style="color: #ffb000") О
+					span тзывы наших клиентов
+		+b.feedback-slider-container
+			.feedback-slider-prev.slider-prev-frame.d-none.d-xxl-flex
+				+icon("slider-prev")
+			.feedback-slider-next.slider-next-frame.d-none.d-xxl-flex
+				+icon("slider-next")
+			+e.slider-container.container
+				.feedback-slider-js-pugin.swiper-bullets-frame
+				.swiper-container.feedback-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+feedbackSlide('1','Андрей Ключников','25 декабря 2019')
+						.swiper-slide
+							+feedbackSlide('2','Семен Лобанов','10 января 2020')
+						.swiper-slide
+							+feedbackSlide('3','Кирилл Гуров','15 февраля 2020')
+						.swiper-slide
+							+feedbackSlide('4','Вероника Сопнева','11 марта 2020')
+						.swiper-slide
+							+feedbackSlide()
+	// end sFeedback
+
+
+mixin feedbackSlide(imgNum="1", clientName='Андрей Ключников', feedbackDate='25 декабря 2019')
+	+e.A.feedback-slide(href="#")
+		+e.client-data-block
+			+e.img-container
+				img(src=`img/@2x/feedback-slider-img-${imgNum}.png` alt="")
+				//- catalog-table-2
+				//- feedback-slider-img-
+			+e.txt-container
+				+e.client-name=clientName
+				+e.feedback-date=feedbackDate
+			+e.quotes-symb
+				img(src="" alt="")
+		+e.P.feedback-txt С другой стороны реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа соответствующий условий активизации.
+		+e.inner-link-cont
+			+icon('play-icon')
+			span Смотреть видеоотзыв клиента

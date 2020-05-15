@@ -632,3 +632,40 @@ h2 .h2{
 				rgba(0,0,0,0) 100%);
 	}
 }
+
+//grey inp frame
+.grey-inp-frame{
+	background-color: $secondary;
+	border-radius: 0;
+	border: 1px solid $border-container-color;
+	box-shadow: none;
+
+	&:focus{
+		border: 1px solid $warning;
+	}
+}
+
+.discard-btn-frame{
+	@extend .btn;
+	@extend .btn-danger;
+
+	height: 40px;
+	display: flex;
+	align-items: center;
+	padding: 0 17px;
+
+	span{
+		font-size: 14px;
+		line-height: 16px;
+		color: $white;
+	}
+	.icon{
+		font-size: 12px;
+		margin-left: 17px;
+	}
+
+	&:hover, &:active{
+		box-shadow: none;
+		background-color: #C74444;
+	}
+}

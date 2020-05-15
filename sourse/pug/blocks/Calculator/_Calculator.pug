@@ -6,6 +6,16 @@ mixin Calculator()
 				p Индивидуальный расчет
 				h2 Калькулятор строительства дома
 			+CalcStep1()
+			+CalcStep2()
+			+CalcStep2_fewStages1()
+			+CalcStep3()
+			+CalcStep3__fewStages1()
+			+CalcStep4()
+			+CalcStep5()
+			+CalcStep6()
+			+CalcStep7()
+			+CalcStep8()
+			+CalcStep9()
 	// end Calculator
 
 mixin CalcStep1()
@@ -24,9 +34,244 @@ mixin CalcStep1()
 		+e.calculator-row.row
 			+stepContent()
 				+stepContentHeader()
-				+stepContentTopLine()
+				+stepContentTopLine('Выберите материал для фундамента:')
+				+stepContentBody()
+					+stepContentBodyItems1()
 				+stepContentFooter()
 			+stepPreview()
+
+mixin CalcStep2()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '')
+		+stepItem('04', 'Кровля', '')
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 02', 'Стены')
+				+stepContentTopLine('Выберите материал для стены:')
+				+stepContentBody('Высота стен 1 этажа (м):', 'Объем стен (м3)', ['3', '4', '5'])
+					+stepContentBodyItems2()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep2_fewStages1()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '')
+		+stepItem('04', 'Кровля', '')
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 02', 'Стены')
+				+stepContentTopLine('Выберите материал для стены:')
+					+b.SC-few-stages.row
+						+SC_fewStagesLineItem("Стены 1 этажа", "616 555 р.", "1", "active")
+						+SC_fewStagesLineItem("Стены 2 этажа", "1 р.", "2")
+						+SC_fewStagesLineItem("Стены 3 этажа", "0 р.", "3")
+				+stepContentBody('Высота стен 1 этажа (м):', 'Объем стен (м3)', ['3', '4', '5'])
+					+stepContentBodyItems2()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep3()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '')
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 03', 'Перекрытия')
+				+stepContentTopLine('Выберите материал для перекрытий:')
+				+stepContentBody__Step3('Площадь перекрытия (м2)')
+					+stepContentBodyItems3()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep3__fewStages1()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '')
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 03', 'Перекрытия')
+				+stepContentTopLine('Выберите материал для перекрытий:')
+					+b.SC-few-stages.row
+						+SC_fewStagesLineItem("Перекрытия подвала", "616 555 р.", "1", "active")
+						+SC_fewStagesLineItem("Перекрытия 1 этажа", "1 р.", "2")
+						+SC_fewStagesLineItem("Перекрытия 2 этажа", "0 р.", "3")
+				+stepContentBody__Step3('Площадь перекрытия (м2)')
+					+stepContentBodyItems3()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep4()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '')
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 04', 'Кровля')
+				+stepContentTopLine('Выберите материал для кровли:')
+				+stepContentBody__Step3('Площадь кровли (м2)', false)
+					+stepContentBodyItems4()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep5()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '2 038 400.0 р.')(class="active")
+		+stepItem('06', 'Лестница', '')
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 05', 'Дымоход')
+				+stepContentTopLine('Выберите материал для трубы:')
+				+stepContentBody__Step5()
+					+stepContentBodyItems5()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep6()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '2 038 400.0 р.')(class="active")
+		+stepItem('06', 'Лестница', '2 038 400.0 р.')(class="active")
+		+stepItem('07', 'Фасад', '')
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 06', 'Лестница')
+				+stepContentTopLine('Выберите материал для лестниц:')
+				+stepContentBody__Step5()
+					+stepContentBodyItems6()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep7()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '2 038 400.0 р.')(class="active")
+		+stepItem('06', 'Лестница', '2 038 400.0 р.')(class="active")
+		+stepItem('07', 'Фасад', '2 038 400.0 р.')(class="active")
+		+stepItem('08', 'Окна, двери', '')
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 07', 'Фасад')
+				+stepContentTopLine('Выберите материал для фасада:')
+				+stepContentBody__Step7('Площадь фасада (м2)', false)
+					+stepContentBodyItems7()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep8()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '2 038 400.0 р.')(class="active")
+		+stepItem('06', 'Лестница', '2 038 400.0 р.')(class="active")
+		+stepItem('07', 'Фасад', '2 038 400.0 р.')(class="active")
+		+stepItem('08', 'Окна, двери', '2 038 400.0 р.')(class="active")
+		+stepItem('09', 'Результат', '')
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+stepContentHeader('Шаг 08', 'Окна и двери')
+				//+stepContentTopLine('Выберите материал для фасада:')
+				+stepContentBody__Step8('Количество окон','Количество дверей')
+					+stepContentBodyItems8()
+				+stepContentFooter()
+			+stepPreview()
+
+mixin CalcStep9()
+	+calculatorHeader()
+	+stepSrtip()
+		+stepItem('01', 'Фундамент', '2 038 400.0 р.')(class="active")
+		+stepItem('02', 'Стены', '2 038 400.0 р.')(class="active")
+		+stepItem('03', 'Перекрытия', '2 038 400.0 р.')(class="active")
+		+stepItem('04', 'Кровля', '2 038 400.0 р.')(class="active")
+		+stepItem('05', 'Дымоход', '2 038 400.0 р.')(class="active")
+		+stepItem('06', 'Лестница', '2 038 400.0 р.')(class="active")
+		+stepItem('07', 'Фасад', '2 038 400.0 р.')(class="active")
+		+stepItem('08', 'Окна, двери', '2 038 400.0 р.')(class="active")
+		+stepItem('09', 'Результат', '')(class="active")
+	+b.calculator-body
+		+e.calculator-row.row
+			+stepContent()
+				+finalStepContent()
+			+stepPreview(false)
+
+
+mixin SC_fewStagesLineItem(name="Стены 1 этажа", price="616 555 р.", number="1", Itemclasses='')
+	+e.item-container.col-12.col-lg-4(class=Itemclasses)
+		+e.item
+			+e.txt-block
+				span=name
+				span=price
+			+e.number=number
 
 mixin calculatorHeader()
 	+b.calculator-header
@@ -107,7 +352,7 @@ mixin stepContentHeader(stepTxt='Шаг 01', stepName='Фундамент')
 				span Следующий пункт
 				+icon('angle-right')
 
-mixin stepContentTopLine()
+mixin stepContentTopLine(hasChoseTxt=false)
 	+e.UL.top-line
 		+e.LI.top-line-item
 			span Стоимость работ:
@@ -118,6 +363,211 @@ mixin stepContentTopLine()
 		+e.LI.top-line-item
 			span Итого:
 			span 1 308 944 р.
+	block
+	if hasChoseTxt
+		+e.chose-txt=hasChoseTxt
+
+mixin stepContentBody(selectHeadlineTxt="Толщина стены фундамента", inpHeadlineTxt="Объем фундамента м3", selectOptions=['0.4', '0.5', '0.6'])
+	+b.step-content-body
+		+form-wrap()
+			+e.top-select-line
+				+e.inp-item-cont
+					.headline=selectHeadlineTxt
+					+b.catalog-headline-select-parent
+						+filterSelect('SelectName', selectOptions, 'PlaceHolder', 'custom-select2-catalog-headline')
+				+e.inp-item-cont
+					.headline=inpHeadlineTxt
+					+input('155', 'text')(disabled="true")
+				+e.discard-btn-block
+					+e.A.discard-btn(href="#")
+						span Сбросить
+						+icon('cross')
+			block
+
+mixin stepContentBody__Step3(inpHeadlineTxt="Объем фундамента м3", hasSkipBtn=true)
+	+b.step-content-body
+		+form-wrap()
+			+e.top-select-line
+				+e.inp-item-cont.step3__inp-item-cont
+					.headline=inpHeadlineTxt
+					+input('155', 'text')(disabled="true")
+				if hasSkipBtn
+					+e.step3__skip-btn-block
+						+e.A.step3__skip-btn(href="#") Пропустить
+				+e.discard-btn-block
+					+e.A.discard-btn(href="#")
+						span Сбросить
+						+icon('cross')
+			block
+
+mixin stepContentBody__Step5(hasSkipBtn=true)
+	+b.step-content-body
+		+form-wrap()
+			+e.top-select-line
+				if hasSkipBtn
+					+e.step3__skip-btn-block.step5__btn-block
+						+e.A.step3__skip-btn(href="#") Пропустить
+				+e.discard-btn-block.step5__btn-block
+					+e.A.discard-btn(href="#")
+						span Сбросить
+						+icon('cross')
+			block
+
+mixin stepContentBody__Step7(inpHeadlineTxt="Объем фундамента м3", hasSkipBtn=true)
+	+b.step-content-body
+		+form-wrap()
+			+e.top-select-line
+				+e.inp-item-cont.step3__inp-item-cont
+					.headline=inpHeadlineTxt
+					+input('155', 'text')(disabled="true")
+				if hasSkipBtn
+					+e.step3__skip-btn-block
+						+e.A.step3__skip-btn(href="#") Пропустить
+			block
+
+mixin stepContentBody__Step8(inpHeadlineTxt="Количество окон",inpHeadlineTxt2="Количество дверей", hasSkipBtn=true)
+	+b.step-content-body
+		+form-wrap()
+			+e.top-select-line
+				+e.inp-item-cont.step3__inp-item-cont
+					.headline=inpHeadlineTxt
+					+input('5', 'text')(disabled="true")
+				+e.inp-item-cont.step3__inp-item-cont
+					.headline=inpHeadlineTxt2
+					+input('7', 'text')(disabled="true")
+				if hasSkipBtn
+					+e.step3__skip-btn-block
+						+e.A.step3__skip-btn(href="#") Пропустить
+				+e.discard-btn-block
+					+e.A.discard-btn(href="#")
+						span Сбросить
+						+icon('cross')
+			block
+	//body items
+mixin stepContentBodyItems1()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-1-img-','1', 'Цокольный этаж из блоков ФБС', 'Высота стен')(class='active')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-1-img-','2', 'Цокольный этаж из блоков ФБС2', 'Высота стен')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-1-img-','3', 'Цокольный этаж из блоков ФБС3', 'Высота стен')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-1-img-','4', 'Цокольный этаж из блоков ФБС4', 'Высота стен')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-1-img-','5', 'Цокольный этаж из блоков ФБС5', 'Высота стен')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Цокольный этаж из блоков ФБС')(class='active')
+			+stepContentBodyItemSampleDescription('Цокольный этаж из блоков ФБС 2')
+			+stepContentBodyItemSampleDescription('Цокольный этаж из блоков ФБС 3')
+			+stepContentBodyItemSampleDescription('Цокольный этаж из блоков ФБС 4')
+			+stepContentBodyItemSampleDescription('Цокольный этаж из блоков ФБС 5')
+
+mixin stepContentBodyItems2()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-2-img-','1', 'Газосиликатные блоки', 'Толщина блока')(class='active')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-2-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-2-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-2-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-2-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки ','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')(class='active')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  2','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  3','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  4','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  5','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+
+
+mixin stepContentBodyItems3()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-3-img-','1', 'Газосиликатные блоки', 'Толщина блока')(class='active')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-3-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-3-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-3-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-3-img-','1', 'Газосиликатные блоки', 'Толщина блока')
+				+filterSelectWithoutPH('SelectName', ['0.4', '0.5', '0.6'], 'custom-select2-catalog-headline')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки ','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')(class='active')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  2','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  3','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  4','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+			+stepContentBodyItemSampleDescription('Газосиликатные блоки  5','Сегодня в области строительства активно задействуется такой строительный материал, как газосиликатные блоки. Причина такой популярности кроется в ячеистой структуре изделия, благодаря чему блоки обладают малым весом. Производить строительные мероприятия при помощи этого материала очень быстро и легко.')
+
+mixin stepContentBodyItems4()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-4-img-','1', 'Металлочерепица', '')(class='step4__sample active')
+			+stepContentBodyItemSample('calculator-step-4-img-','1', 'Металлочерепица 2', '')(class='step4__sample')
+			+stepContentBodyItemSample('calculator-step-4-img-','1', 'Металлочерепица 3', '')(class='step4__sample')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Металлочерепица ','Самый популярный материал для современных скатных кровель. По разным оценкам,  от 60% до 80% крыш покрываются сегодня именно металлочерепицей. Причины такой  популярности просты: быстрый монтаж, привлекательный внешний вид, хорошая   долговечность и демократичная цена. ')(class='active')
+			+stepContentBodyItemSampleDescription('Металлочерепица  2','Самый популярный материал для современных скатных кровель. По разным оценкам,  от 60% до 80% крыш покрываются сегодня именно металлочерепицей. Причины такой  популярности просты: быстрый монтаж, привлекательный внешний вид, хорошая   долговечность и демократичная цена. ')
+			+stepContentBodyItemSampleDescription('Металлочерепица  3','Самый популярный материал для современных скатных кровель. По разным оценкам,  от 60% до 80% крыш покрываются сегодня именно металлочерепицей. Причины такой  популярности просты: быстрый монтаж, привлекательный внешний вид, хорошая   долговечность и демократичная цена. ')
+
+mixin stepContentBodyItems5()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-5-img-','1', 'Металлочерепица', 'Количество шахт')(class='active')
+				+filterSelectWithoutPH('SelectName', ['1', '2', '3'], 'custom-select2-catalog-headline')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Металлочерепица','Самый популярный материал для современных скатных кровель. По разным оценкам,  от 60% до 80% крыш покрываются сегодня именно металлочерепицей. Причины такой  популярности просты: быстрый монтаж, привлекательный внешний вид, хорошая   долговечность и демократичная цена. ')(class='active')
+
+mixin stepContentBodyItems6()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-6-img-','1', 'Металлическая', '')(class='step4__sample active')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Металлическая','Металлическая лестница - достойный выбор. Такая лестница получится долговечной, но эстетически будет уступать другим материалам.')(class='active')
+
+mixin stepContentBodyItems7()
+	+b.step-content-body-items.tabs
+		+e.inner-row.row.tabs__caption
+			+stepContentBodyItemSample('calculator-step-7-img-','1', 'Облицовочный кирпич', 'Толщина утеплителя')(class='active')
+				+filterSelectWithoutPH('SelectName', ['без', 'з'], 'custom-select2-catalog-headline')
+			+stepContentBodyItemSample('calculator-step-7-img-','1', 'Облицовочный кирпич 2', 'Толщина утеплителя')
+				+filterSelectWithoutPH('SelectName', ['без', 'з'], 'custom-select2-catalog-headline')
+		+e.description-pill-cont.tabs__wrap
+			+stepContentBodyItemSampleDescription('Облицовка дома кирпичом','Конечно, этот вид отделки всегда смотрится привлекательно, он создает эффект монументальности и колоритности строения. ')(class='active')
+			+stepContentBodyItemSampleDescription('Облицовка дома кирпичом 2','Конечно, этот вид отделки всегда смотрится привлекательно, он создает эффект монументальности и колоритности строения. ')
+
+mixin stepContentBodyItems8()
+	+b.step-content-body-items
+		+e.step8__calc-report-block
+			+e.step8__report-headline Двери
+			p В расчете стандартной двери приняты размеры проема 2.1 м2 = 2.1х1.0 м
+			p Изменение количества дверей учитывается в объеме материала стен.
+		+e.step8__calc-report-block
+			+e.step8__report-headline Окна
+			p В расчете стандартного окна приняты размеры проема 1.8 м2 = 1.2х1.5 м
+			p Изменение количества окон учитывается в объеме материала стен.
+	// end body items
+mixin stepContentBodyItemSample(imgPass,imgNum, itemName, itemSlectDesr)
+	+e.step-content-body-item-container.col-sm-6.col-lg-4.tabs__btn&attributes(attributes)
+		+e.step-content-body-item
+			+e.img-container
+				img(src=`img/@2x/${imgPass}${imgNum}.png` alt="")
+			+e.content-container
+				+e.item-name=itemName
+				+e.select-description=itemSlectDesr
+				+b.catalog-headline-select-parent
+					block
+
+mixin stepContentBodyItemSampleDescription(headlineTxt="Цокольный этаж из блоков ФБС", descriptionTxt="ФБС блоки для возведения фундамента и цокольного этажа сегодня используются  практически повсеместно. Это достаточно распространённый, надежный и долговечный  строительный материал, который используется для устройства оснований жилых зданий.  Применение подобного конструктивного решения обусловлено, прежде всего, увеличенными  темпами строительства, а также необходимостью упрощения устройства фундамента и  цокольной части здания. Цоколь из ФБС – хорошее решение практически для любых  условий.")
+	+b.step-content-body-item-sample-description.tabs__content&attributes(attributes)
+		+e.headline=headlineTxt
+		+e.description-txt=descriptionTxt
 
 mixin stepPreview(hasResultPriceBaner=true)
 	+b.step-preview.col-lg-4.text-center
@@ -141,3 +591,126 @@ mixin stepContentFooter(hasNextStep=true)
 			+e.next-step-btn(href='#')
 				span Следующий пункт
 				+icon('angle-right')
+
+mixin finalStepContent()
+	+b.step9-content
+		+e.header
+			+e.header-txt Результат расчета строительства
+			+e.previous-step-btn
+				+icon('angle-left')
+				span Предыдущий пункт
+		+e.plan-block
+			+e.plan-txt-block
+				.gray-txt Чертеж выбранного дома:
+				.black-txt Пятистенок
+			+e.plan-img-container
+				img(src="img/@2x/5walls.png" alt="")
+		+e.chosen-materials-block
+			+e.chosen-materials-headline Выбранные материалы:
+			+finalStep_chosenMaterial('01', "Фундамент")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data(false, ['1. Материал фундамента:', '2. Объем фундамента:', '3. Толщина стены фундамента:'], ['Фундаментная плита', '46.2 м3', '0.3 м'])
+			+finalStep_chosenMaterial('02', "Стены")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data('1 этаж', ['1. Материал стен:', '2. Высота стен:', '3. Объём стен:', '4. Толщина блока:'], ['Керамические блоки', '2.75 м', '41.781 м3', '0.38 м'])
+					+finalStep_chosenMaterial_content-data('2 этаж', ['1. Материал стен:', '2. Высота стен:', '3. Объём стен:', '4. Толщина блока:'], ['Керамические блоки', '2.75 м', '41.781 м3', '0.38 м'])
+			+finalStep_chosenMaterial('03', "Перекрытия")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data()
+			+finalStep_chosenMaterial('04', "Кровля")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data()
+			+finalStep_chosenMaterial('05', "Труба")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data()
+			+finalStep_chosenMaterial('06', "Лестница")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data()
+			+finalStep_chosenMaterial('07', "Фасад")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data()
+			+finalStep_chosenMaterial('08', "Окна и двери")
+				+e.content-conateiner
+					+finalStep_chosenMaterial_content-data-8()
+		+b.coins-and-btns-block
+			+e.coins-block
+				+e.coin-item
+					+e.coin-item-headline Итоговая стоимость материалов:
+					+e.coin-item-price
+						+e.coin-item-price-img-container
+							img(src="img/yellow-ruble.svg" alt="")
+						+e.coin-item-price-txt 1 320 300
+				+e.coin-item
+					+e.coin-item-headline Итоговая стоимость работ:
+					+e.coin-item-price
+						+e.coin-item-price-img-container
+							img(src="img/yellow-ruble.svg" alt="")
+						+e.coin-item-price-txt 2 320 300
+				+e.coin-item
+					+e.coin-item-headline.summary Итого:
+					+e.coin-item-price
+						+e.coin-item-price-img-container
+							img(src="img/yellow-ruble.svg" alt="")
+						+e.coin-item-price-txt 3 320 300
+			+e.btns-block
+				+e.order-estimate-btn Заказать полную смету
+				+e.send-estimate-on-email Отправить на e-mail
+
+
+
+
+mixin finalStep_chosenMaterial(stepNumber="01", stepName="Фундамент")
+	+b.step9-chosenMaterialPill
+		+e.headline
+			+e.headline-step-number=stepNumber
+			+e.healine-step-name=stepName
+			+e.plus
+		block
+
+mixin finalStep_chosenMaterial_content-data(contentListHasHeadline=false, summaryListArr=['1. Материал фундамента:', '2. Объем фундамента:', '3. Толщина стены фундамента:'], summaryListLinkArr=['Фундаментная плита', '46.2 м3', '0.3 м'])
+	+e.content
+		+e.content-data
+			+e.content-img
+				img(src="img/@2x/calculator-step-7-img-1.png" alt="")
+			+e.UL.content-description-list
+				if contentListHasHeadline
+					li.summary-headline=contentListHasHeadline
+				- for (let [index,summaryTxt] of Object.entries(summaryListArr)) {
+					li
+						span=summaryTxt
+						a(href="#")=summaryListLinkArr[index]
+				- }
+			+e.content-description-txt Монолитная плита - эффективное решение в сложных геологических условиях. Обладает невысокой жесткостью. Сложность в размещении коммуникаций. Наиболее выгодна при малых размерах здания в плане.
+		+e.UL.contact-summery
+			+e.LI.contact-summery-item
+				span Стоимость работ:
+				span 603 200 р.
+			+e.LI.contact-summery-item
+				span Стоимость материалов:
+				span 705 744 р.
+			+e.LI.contact-summery-item
+				span Итого:
+				span 1 308 944 р.
+
+mixin finalStep_chosenMaterial_content-data-8()
+	+e.content
+		+e.content-data-8
+			+e.gray-block8
+				+e.gray-block8-item
+					span Кол-во окон:
+					span 12 шт.
+				+e.gray-block8-item
+					span Кол-во дверей:
+					span 10 шт.
+			+e.txt-block8
+				+e.txt-block8-item
+					span Двери
+					p В расчете стандартной двери приняты размеры проема 2.1 м2 = 2.1х1.0 м
+					p Изменение количества дверей учитывается в объеме материала стен.
+				+e.txt-block8-item
+					span Окна
+					p В расчете стандартного окна приняты размеры проема 1.8 м2 = 1.2х1.5 м
+					p Изменение количества окон учитывается в объеме материала стен.
+
+
+

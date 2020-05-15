@@ -345,7 +345,7 @@ function eventHandler() {
 		dropdownCssClass: "drop-down-catalog-header"
 	});
 
-	function allWaysShowSelect() {
+	function allWaysShowPlaceholder() {
 		var allSelects = document.querySelectorAll('.select2-container');
 
 		var _iterator = _createForOfIteratorHelper(allSelects),
@@ -354,9 +354,12 @@ function eventHandler() {
 		try {
 			for (_iterator.s(); !(_step = _iterator.n()).done;) {
 				var select = _step.value;
-				var placeholder = select.querySelector('.select2-selection__placeholder');
-				select.CustomPropPlaceholder = placeholder;
-				select.addEventListener('click', putPlaceholderBack);
+
+				if (!select.parentElement.querySelector('select').classList.contains('discard-always-show-PH')) {
+					var placeholder = select.querySelector('.select2-selection__placeholder');
+					select.CustomPropPlaceholder = placeholder;
+					select.addEventListener('click', putPlaceholderBack);
+				}
 			}
 		} catch (err) {
 			_iterator.e(err);
@@ -375,7 +378,7 @@ function eventHandler() {
 		}
 	}
 
-	allWaysShowSelect(); //for mob filter
+	allWaysShowPlaceholder(); //for mob filter
 
 	$('.filters-block__filter-mob-bar').click(function () {
 		$('body').addClass('fixed-on-filter-js');
@@ -571,6 +574,36 @@ function eventHandler() {
 			el: $(this).find('.problem-slider-js-pugin'),
 			clickable: true
 		}
+	}); //feedbackSlider
+
+	var feedbackSlider = new Swiper('.feedback-slider-js', {
+		breakpoints: {
+			0: {
+				slidesPerView: 1,
+				spaceBetween: 10
+			},
+			576: {
+				slidesPerView: 'auto',
+				spaceBetween: 15
+			}
+		},
+		//loop: true,
+		navigation: {
+			nextEl: '.feedback-slider-next',
+			prevEl: '.feedback-slider-prev'
+		},
+		//pagination
+		pagination: {
+			el: $(this).find('.feedback-slider-js-pugin'),
+			clickable: true
+		}
+	}); //calcStep9
+
+	$('.step9-chosenMaterialPill__headline').click(function () {
+		this.classList.toggle('active');
+		$(this.parentElement.querySelector('.step9-chosenMaterialPill__content-conateiner')).slideToggle(function () {
+			this.classList.toggle('active');
+		});
 	}); //
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

@@ -1,0 +1,34 @@
+mixin sOtherServices()
+	// start sOtherServices
+	+b.SECTION.sOtherServices#sOtherServices&attributes(attributes)
+		+e.inner-cont.container
+			+b.section-title
+				p Чем еще мы занимаемся?
+				h2 Другие услуги компании
+			.other-service-row.row
+				+otherServiceItem("01", "Подбор участка для строительства")
+				+otherServiceItem("02", "Помощь в оформлении документов")
+				+otherServiceItem("03", "геодезические работы")
+				+otherServiceItem("04", "Проектирование дома")
+				+otherServiceItem("05", "Строительство любой сложности")
+				+otherServiceItem("06", "Внутренние инженерные системы")
+				+otherServiceItem("07", "Наружные сети и коммуникации")
+				+otherServiceItem("08", "Отделочные работы высокого качества")
+				+otherServiceItem("09", "Благоустройство территории")
+	// end sOtherServices
+
+mixin otherServiceItem(num="01", itemTxt="Подбор участка для строительства")
+	+b.A.other-service-item.col-12.col-lg-4(href="#")
+		+e.inner-img-cont
+			img(src="img/@2x/other-service-example-sliced.png" alt="")
+		+e.service-content
+			+e.number-box
+				+e.number-block=num
+				+e.service-txt услуга
+			+e.service-name=itemTxt
+			+e.get-details-link
+				span Подробнее
+				+icon('small-blue-arrow-right')
+
+
+

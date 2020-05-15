@@ -17,6 +17,8 @@ include ../blocks/sAgreementAndFee/_sAgreementAndFee.pug
 include ../blocks/sSimpleSteps/_sSimpleSteps.pug
 include ../blocks/sProblems/_sProblems.pug
 include ../blocks/sAskEngineer/_sAskEngineer.pug
+include ../blocks/sOtherServices/_sOtherServices.pug
+include ../blocks/sFeedback/_sFeedback.pug
 
 block variables
 	- let  mainPage= null
@@ -36,5 +38,7 @@ block pagecontent
 	+sSimpleSteps()
 	+sProblems()
 	+sAskEngineer()
+	+sOtherServices()
+	+sFeedback()
 	+sMap()
 	+footer()
