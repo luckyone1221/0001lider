@@ -557,7 +557,7 @@ mixin stepContentBodyItemSample(imgPass,imgNum, itemName, itemSlectDesr)
 	+e.step-content-body-item-container.col-sm-6.col-lg-4.tabs__btn&attributes(attributes)
 		+e.step-content-body-item
 			+e.img-container
-				img(src=`img/@2x/${imgPass}${imgNum}.png` alt="")
+				img.lazy(src="#" data-src=`img/@2x/${imgPass}${imgNum}.png` alt="")
 			+e.content-container
 				+e.item-name=itemName
 				+e.select-description=itemSlectDesr
@@ -573,13 +573,13 @@ mixin stepPreview(hasResultPriceBaner=true)
 	+b.step-preview.col-lg-4.text-center
 		+e.preview-img-bl
 			+e.preview-img-cont
-				img(src="img/@2x/calculator-preview.png" alt="")
+				img.lazy(src="#" data-src="img/@2x/calculator-preview.png" alt="")
 		if hasResultPriceBaner
 			+e.result-price-banner.text-left
 				+e.result-price-txt Итоговая стоимость:
 				+e.price-cont
 					+e.ruble-img-cont
-						img(src="img/yellow-ruble.svg" alt="")
+						img.lazy(src="#" data-src="img/yellow-ruble.svg" alt="")
 					+e.SPAN.baner-price-txt 1 320 300
 		+e.A.order-project-btn(href="#") Заказать проект
 
@@ -604,7 +604,7 @@ mixin finalStepContent()
 				.gray-txt Чертеж выбранного дома:
 				.black-txt Пятистенок
 			+e.plan-img-container
-				img(src="img/@2x/5walls.png" alt="")
+				img.lazy(src="#" data-src="img/@2x/5walls.png" alt="")
 		+e.chosen-materials-block
 			+e.chosen-materials-headline Выбранные материалы:
 			+finalStep_chosenMaterial('01', "Фундамент")
@@ -638,19 +638,19 @@ mixin finalStepContent()
 					+e.coin-item-headline Итоговая стоимость материалов:
 					+e.coin-item-price
 						+e.coin-item-price-img-container
-							img(src="img/yellow-ruble.svg" alt="")
+							img.lazy(src="#" data-src="img/yellow-ruble.svg" alt="")
 						+e.coin-item-price-txt 1 320 300
 				+e.coin-item
 					+e.coin-item-headline Итоговая стоимость работ:
 					+e.coin-item-price
 						+e.coin-item-price-img-container
-							img(src="img/yellow-ruble.svg" alt="")
+							img.lazy(src="#" data-src="img/yellow-ruble.svg" alt="")
 						+e.coin-item-price-txt 2 320 300
 				+e.coin-item
 					+e.coin-item-headline.summary Итого:
 					+e.coin-item-price
 						+e.coin-item-price-img-container
-							img(src="img/yellow-ruble.svg" alt="")
+							img.lazy(src="#" data-src="img/yellow-ruble.svg" alt="")
 						+e.coin-item-price-txt 3 320 300
 			+e.btns-block
 				+e.order-estimate-btn Заказать полную смету

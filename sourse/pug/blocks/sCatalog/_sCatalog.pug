@@ -243,7 +243,7 @@ mixin catalogSuareItemForIndex00(imgNum=1, headerTxt='2-х этажный кот
 	+b.catalog-square-item.col-sm-6.col-lg-4
 		+e.content
 			+e.A.img-part(href="#")
-				img.house-img(src=`img/@2x/inedx-last-project-${imgNum}.png` alt="")
+				img.house-img.lazy(src="#" data-src=`img/@2x/inedx-last-project-${imgNum}.png` alt="")
 			+e.content-part
 				+e.A.location-link(href='#')
 					+icon('small-blue-location')

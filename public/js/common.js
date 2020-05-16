@@ -207,8 +207,8 @@ function eventHandler() {
 
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	//$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -373,8 +373,26 @@ function eventHandler() {
 
 		if (!placeholderPresent) {
 			var renderedBlock = this.querySelector('.select2-selection__rendered');
+			this.CustomPropPrevValue = renderedBlock.innerHTML;
 			renderedBlock.innerHTML = '';
-			renderedBlock.appendChild(this.CustomPropPlaceholder);
+			renderedBlock.appendChild(this.CustomPropPlaceholder); //console.log(this.CustomPropPrevValue);
+			//
+
+			var _putOptionBack = function putOptionBack() {
+				document.body.removeEventListener('click', _putOptionBack);
+				var itemHasPH = this.querySelector('.select2-selection__rendered .select2-selection__placeholder');
+
+				if (itemHasPH) {
+					var parent = itemHasPH.parentElement;
+					parent.removeChild(itemHasPH);
+					parent.innerHTML = this.CustomPropPrevValue;
+				}
+			};
+
+			_putOptionBack = _putOptionBack.bind(this);
+			window.setTimeout(function () {
+				document.body.addEventListener('click', _putOptionBack);
+			}, 100); //
 		}
 	}
 
@@ -503,7 +521,12 @@ function eventHandler() {
 			el: $(this).find('.last-project-slider-js-pugin'),
 			clickable: true
 		}
-	}); //estimate js
+	}); //
+	//async map load
+
+	window.setTimeout(function () {
+		document.querySelector('.pageYandexMap').setAttribute('src', 'https://yandex.ua/map-widget/v1/?um=constructor%3A6b422557a0b84a1e0b7d340c6e499a6a26494033f9d4972298751878ff8da093&amp;source=constructor');
+	}, 3000); //estimate js
 
 	$('.sEstimateDiscount__img-container').click(function () {
 		//this.siblings()

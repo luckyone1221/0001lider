@@ -22,7 +22,7 @@ mixin commonProfitPill(i, headline, pTxt)
 	+e.A.card-col.col-12.col-sm-6.col-lg-4(href='#')
 		+e.top-line
 			.img-box
-				img(src=`img/profit-pills-${i}.svg` alt='')
+				img.lazy(src="#" data-src=`img/profit-pills-${i}.svg` alt='')
 			.pill-number= "0" + i
 		+e.SPAN.pill-headline=headline
 		+e.P.pill-txt=pTxt

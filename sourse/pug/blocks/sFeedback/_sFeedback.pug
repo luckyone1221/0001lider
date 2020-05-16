@@ -35,14 +35,13 @@ mixin feedbackSlide(imgNum="1", clientName='Андрей Ключников', fe
 	+e.A.feedback-slide(href="#")
 		+e.client-data-block
 			+e.img-container
-				img(src=`img/@2x/feedback-slider-img-${imgNum}.png` alt="")
+				img.lazy(src="#" data-src=`img/@2x/feedback-slider-img-${imgNum}.png` alt="")
 				//- catalog-table-2
 				//- feedback-slider-img-
 			+e.txt-container
 				+e.client-name=clientName
 				+e.feedback-date=feedbackDate
 			+e.quotes-symb
-				img(src="" alt="")
 		+e.P.feedback-txt С другой стороны реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Значимость этих проблем настолько очевидна, что рамки и место обучения кадров требуют от нас анализа соответствующий условий активизации.
 		+e.inner-link-cont
 			+icon('play-icon')

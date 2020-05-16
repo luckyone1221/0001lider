@@ -29,5 +29,5 @@ mixin commonMaterialPill(i, mName='mName')
 		+e.top-line
 			span.number= "0" + i
 			.img-container
-				img(src=`img/@2x/sMaterial-${i}.png` alt="")
+				img.lazy(src="#" data-src=`img/@2x/sMaterial-${i}.png` alt="")
 		+e.P.material-name= mName

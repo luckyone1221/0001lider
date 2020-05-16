@@ -205,7 +205,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
+	//$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -391,8 +391,26 @@ function eventHandler() {
 		let placeholderPresent =  this.querySelector('.select2-selection__placeholder');
 		if (!placeholderPresent){
 			let renderedBlock = this.querySelector('.select2-selection__rendered');
+			this.CustomPropPrevValue = renderedBlock.innerHTML;
 			renderedBlock.innerHTML = '';
 			renderedBlock.appendChild(this.CustomPropPlaceholder);
+			//console.log(this.CustomPropPrevValue);
+
+			//
+			let putOptionBack = function () {
+				document.body.removeEventListener('click', putOptionBack);
+				let itemHasPH = this.querySelector('.select2-selection__rendered .select2-selection__placeholder');
+				if (itemHasPH){
+					let parent = itemHasPH.parentElement;
+					parent.removeChild(itemHasPH);
+					parent.innerHTML = this.CustomPropPrevValue;
+				}
+			};
+			putOptionBack = putOptionBack.bind(this);
+			window.setTimeout(function () {
+				document.body.addEventListener('click', putOptionBack);
+			}, 100);
+			//
 		}
 	}
 	allWaysShowPlaceholder();
@@ -512,6 +530,7 @@ function eventHandler() {
 	});
 	//last project slider
 	let lastProjectSlider = new Swiper('.last-project-js', {
+
 		slidesPerView: '1',
 		spaceBetween: 10,
 		loop: true,
@@ -521,6 +540,12 @@ function eventHandler() {
 			clickable: true,
 		},
 	});
+	//
+	//async map load
+	window.setTimeout(function () {
+		document.querySelector('.pageYandexMap').setAttribute('src', 'https://yandex.ua/map-widget/v1/?um=constructor%3A6b422557a0b84a1e0b7d340c6e499a6a26494033f9d4972298751878ff8da093&amp;source=constructor');
+	}, 3000);
+
 	//estimate js
 	$('.sEstimateDiscount__img-container').click(function () {
 		//this.siblings()

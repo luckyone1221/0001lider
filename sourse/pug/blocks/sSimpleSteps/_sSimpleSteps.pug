@@ -21,7 +21,7 @@ mixin commonSimpleStepsPill(i, headline, subSteps=['1','2','3'])
 	+e.A.card-col.col-12.col-sm-6.col-lg-4(href='#')
 		+e.top-line
 			.img-box
-				img(src=`img/simple-steps-pills-${i}.svg` alt='')
+				img.lazy(src="#" data-src=`img/simple-steps-pills-${i}.svg` alt='')
 			.pill-number= "0" + i
 		+e.SPAN.pill-headline=headline
 		+e.UL.substeps-list
