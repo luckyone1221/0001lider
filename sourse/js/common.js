@@ -530,7 +530,6 @@ function eventHandler() {
 	});
 	//last project slider
 	let lastProjectSlider = new Swiper('.last-project-js', {
-
 		slidesPerView: '1',
 		spaceBetween: 10,
 		loop: true,
@@ -539,6 +538,16 @@ function eventHandler() {
 			el: $(this).find('.last-project-slider-js-pugin'),
 			clickable: true,
 		},
+	});
+	//
+	$(window).resize(function(){
+		if ($(window).width() < 578) {
+			lastProjectSlider.detachEvents();
+			lastProjectSlider.attachEvents();
+		}
+		else {
+			lastProjectSlider.detachEvents();
+		}
 	});
 	//
 	//async map load
@@ -566,7 +575,7 @@ function eventHandler() {
 			item.style.minHeight = maxHeight + "px";
 		}
 	}
-	makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
+	//makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
 	window.addEventListener('resize',makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), { passive: true });
 	//problems slider
 

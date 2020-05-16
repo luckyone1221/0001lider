@@ -522,6 +522,15 @@ function eventHandler() {
 			clickable: true
 		}
 	}); //
+
+	$(window).resize(function () {
+		if ($(window).width() < 578) {
+			lastProjectSlider.detachEvents();
+			lastProjectSlider.attachEvents();
+		} else {
+			lastProjectSlider.detachEvents();
+		}
+	}); //
 	//async map load
 
 	window.setTimeout(function () {
@@ -569,9 +578,9 @@ function eventHandler() {
 		} finally {
 			_iterator3.f();
 		}
-	}
+	} //makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
 
-	makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
+
 	window.addEventListener('resize', makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), {
 		passive: true
 	}); //problems slider

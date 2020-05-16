@@ -127,6 +127,14 @@
 	&__content-tabs-content{}
 
 	&__content-tabs-content-item{
+		@include media-breakpoint-up(lg){
+			min-height: 700px;
+		}
+		@include media-breakpoint-up(xl){
+			min-height: 600px;
+		}
+
+
 		display: none;
 		&.active{
 			display: block;

@@ -377,7 +377,7 @@ mixin stepContentBody(selectHeadlineTxt="Толщина стены фундам�
 						+filterSelect('SelectName', selectOptions, 'PlaceHolder', 'custom-select2-catalog-headline')
 				+e.inp-item-cont
 					.headline=inpHeadlineTxt
-					+input('155', 'text')(disabled="true")
+					+input('155', 'text')(disabled="disabled")
 				+e.discard-btn-block
 					+e.A.discard-btn(href="#")
 						span Сбросить
@@ -390,7 +390,7 @@ mixin stepContentBody__Step3(inpHeadlineTxt="Объем фундамента м3
 			+e.top-select-line
 				+e.inp-item-cont.step3__inp-item-cont
 					.headline=inpHeadlineTxt
-					+input('155', 'text')(disabled="true")
+					+input('155', 'text')(disabled="disabled")
 				if hasSkipBtn
 					+e.step3__skip-btn-block
 						+e.A.step3__skip-btn(href="#") Пропустить
@@ -419,7 +419,7 @@ mixin stepContentBody__Step7(inpHeadlineTxt="Объем фундамента м3
 			+e.top-select-line
 				+e.inp-item-cont.step3__inp-item-cont
 					.headline=inpHeadlineTxt
-					+input('155', 'text')(disabled="true")
+					+input('155', 'text')(disabled="disabled")
 				if hasSkipBtn
 					+e.step3__skip-btn-block
 						+e.A.step3__skip-btn(href="#") Пропустить
@@ -431,10 +431,10 @@ mixin stepContentBody__Step8(inpHeadlineTxt="Количество окон",inpH
 			+e.top-select-line
 				+e.inp-item-cont.step3__inp-item-cont
 					.headline=inpHeadlineTxt
-					+input('5', 'text')(disabled="true")
+					+input('5', 'text')(disabled="disabled")
 				+e.inp-item-cont.step3__inp-item-cont
 					.headline=inpHeadlineTxt2
-					+input('7', 'text')(disabled="true")
+					+input('7', 'text')(disabled="disabled")
 				if hasSkipBtn
 					+e.step3__skip-btn-block
 						+e.A.step3__skip-btn(href="#") Пропустить
