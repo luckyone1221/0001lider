@@ -524,12 +524,10 @@ function eventHandler() {
 	}); //
 
 	$(window).resize(function () {
-		if ($(window).width() < 578) {
-			lastProjectSlider.detachEvents();
-			lastProjectSlider.attachEvents();
-		} else {
-			lastProjectSlider.detachEvents();
-		}
+		if ($(window).width() < 578) {//lastProjectSlider.detachEvents();
+			//lastProjectSlider.attachEvents();
+		} else {//lastProjectSlider.detachEvents();
+			}
 	}); //
 	//async map load
 
@@ -542,48 +540,23 @@ function eventHandler() {
 		this.parentElement.querySelector('a, button').click();
 	}); //agreementAndFee js
 
-	function makeItemEqHeight(querySelector) {
-		var items = document.querySelectorAll(querySelector);
-		var maxHeight = 0;
-
-		var _iterator2 = _createForOfIteratorHelper(items),
-				_step2;
-
-		try {
-			for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-				var item = _step2.value;
-				item.style.minHeight = 0;
-				var itemHeight = $(item).height();
-
-				if (maxHeight < itemHeight) {
-					maxHeight = itemHeight;
-				}
+	/*function makeItemEqHeight(querySelector) {
+		let items = document.querySelectorAll(querySelector);
+		let maxHeight = 0;
+		for (let item of items){
+			item.style.minHeight = 0;
+			let itemHeight = $(item).height();
+			if (maxHeight < itemHeight){
+				maxHeight = itemHeight;
 			}
-		} catch (err) {
-			_iterator2.e(err);
-		} finally {
-			_iterator2.f();
 		}
-
-		var _iterator3 = _createForOfIteratorHelper(items),
-				_step3;
-
-		try {
-			for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-				var _item = _step3.value;
-				_item.style.minHeight = maxHeight + "px";
-			}
-		} catch (err) {
-			_iterator3.e(err);
-		} finally {
-			_iterator3.f();
+		for (let item of items){
+			item.style.minHeight = maxHeight + "px";
 		}
-	} //makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
-
-
-	window.addEventListener('resize', makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), {
-		passive: true
-	}); //problems slider
+	}*/
+	//makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
+	//window.addEventListener('resize',makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), { passive: true });
+	//problems slider
 
 	var problemsSlider = new Swiper('.problems-slider-js', {
 		breakpoints: {
@@ -600,6 +573,11 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.problem-slider-next',
 			prevEl: '.problem-slider-prev'
+		},
+		//
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4
 		},
 		//pagination
 		pagination: {

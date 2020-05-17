@@ -542,11 +542,11 @@ function eventHandler() {
 	//
 	$(window).resize(function(){
 		if ($(window).width() < 578) {
-			lastProjectSlider.detachEvents();
-			lastProjectSlider.attachEvents();
+			//lastProjectSlider.detachEvents();
+			//lastProjectSlider.attachEvents();
 		}
 		else {
-			lastProjectSlider.detachEvents();
+			//lastProjectSlider.detachEvents();
 		}
 	});
 	//
@@ -561,7 +561,7 @@ function eventHandler() {
 		this.parentElement.querySelector('a, button').click();
 	});
 	//agreementAndFee js
-	function makeItemEqHeight(querySelector) {
+	/*function makeItemEqHeight(querySelector) {
 		let items = document.querySelectorAll(querySelector);
 		let maxHeight = 0;
 		for (let item of items){
@@ -574,9 +574,10 @@ function eventHandler() {
 		for (let item of items){
 			item.style.minHeight = maxHeight + "px";
 		}
-	}
+	}*/
 	//makeItemEqHeight('.sAgreementAndFee__content-tabs-content-item');
-	window.addEventListener('resize',makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), { passive: true });
+	//window.addEventListener('resize',makeItemEqHeight.bind(null, '.sAgreementAndFee__content-tabs-content-item'), { passive: true });
+
 	//problems slider
 
 	let problemsSlider = new Swiper('.problems-slider-js', {
@@ -594,6 +595,11 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.problem-slider-next',
 			prevEl: '.problem-slider-prev',
+		},
+		//
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 4,
 		},
 		//pagination
 		pagination: {

@@ -33,7 +33,7 @@ mixin sProblems()
 mixin problemSlide(slideImg="problem-slider-1.jpg", titleTxt='lalala', headlineTxt='lalala', slideTxt="lalala")
 	+e.A.problem-slide(href="#")
 		+e.slide-img-container
-			img.lazy(src="#" data-src=`img/@2x/${slideImg}` alt="")
+			img.swiper-lazy(src="#" data-src=`img/@2x/${slideImg}` alt="")
 		+e.slide-title=titleTxt
 		+e.slide-headline=headlineTxt
 		+e.P.slide-txt=slideTxt
