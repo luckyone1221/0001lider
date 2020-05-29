@@ -1,6 +1,6 @@
 "use strict";
 
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -14,6 +14,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var $ = jQuery;
 var JSCCommon = {
+	CustomInputFile: function CustomInputFile() {
+		var file = $(".add-file input[type=file]");
+		file.change(function () {
+			var filename = $(this).val().replace(/.*\\/, "");
+			var name = $(".add-file__filename  ");
+			name.text(filename);
+		});
+	},
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
@@ -205,7 +213,8 @@ function eventHandler() {
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.customRange(); //JSCCommon.mobileMenu();
 
-	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
+	JSCCommon.inputMask();
+	JSCCommon.CustomInputFile(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	//$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/02-catalog.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
@@ -264,64 +273,7 @@ function eventHandler() {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev'
 	}), _objectSpread2))); // modal window
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
-
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
-
-
-	$("form").submit(function (e) {
-		e.preventDefault();
-		var th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data
-		}).done(function (data) {
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			}); // window.location.replace("/thanks.html");
-
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () {});
-	}); //my custom code
+	//my custom code
 	//custom mnu js
 
 	$('.header__burger-cont').click(function () {

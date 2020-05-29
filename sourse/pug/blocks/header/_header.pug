@@ -11,7 +11,7 @@ mixin header()
 					+e.phone-img-cont
 						+e.IMG.phone-img(src="img/phone-header.svg" alt="")
 					+e.SPAN.phone-number 8 (831) 410-40-60
-				+e.left-order-btn.btn.btn-primary(href="#") Оставить заявку
+				+e.left-order-btn.btn.btn-primary.link-modal(href="#modal-call") Оставить заявку
 			+e.burger-cont.d-flex.d-lg-none
 				span
 
@@ -23,5 +23,5 @@ mixin mobMenu2()
 				+e.phone-img-cont
 					+e.IMG.phone-img(src="img/phone-header.svg" alt="")
 				+e.SPAN.phone-number 8 (831) 410-40-60
-			+e.left-order-btn(href="#") Оставить заявку
+			+e.left-order-btn.link-modal(href="#modal-call") Оставить заявку
 	// end header

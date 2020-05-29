@@ -2,6 +2,17 @@
 	// display: block;
 	width: 100%;
 	position: relative;
+	max-width: rem(370);
+	padding: rem(34) rem(30);
+	&::before{
+		content: '';
+		position: absolute;
+		left: rem(30);
+		top: 0;
+		background-color: $warning;
+		width: 74px;
+		height: 7px;
+	}
 
 	.modal-content {
 		// max-width: 485px;

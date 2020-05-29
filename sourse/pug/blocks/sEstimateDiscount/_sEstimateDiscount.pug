@@ -10,7 +10,7 @@ mixin sEstimateDiscount()
 				span на смету конкурента!
 			+e.P.afrer-txt Отправьте ее нам для расчета и получите от нас выгодную скидку на строительство
 			+e.send-estimate-btn-cont
-				+e.A.send-estimate-btn(href="#") Отправить смету
+				+e.A.send-estimate-btn.link-modal(href="#modal-EstimateDiscount") Отправить смету
 				+e.img-container
 					img.lazy(src="#" data-src="img/@2x/estimate-img-sliced.png" alt="")
 
