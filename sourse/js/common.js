@@ -392,13 +392,19 @@ function eventHandler() {
 	let bigSliderThumb = new Swiper('.big-slider-thumb-js', {
 		slidesPerView: '5',
 		spaceBetween: 10,
-		loop: true,
+
+		//loop: true,
+		//loopedSlides: 10, //looped slides should be the same
 	});
 
 	let bigSlider = new Swiper('.big-slider-js', {
 		slidesPerView: '1',
 		spaceBetween: 10,
+
 		loop: true,
+		//loopedSlides: 10, //looped slides should be the same
+
+
 		navigation: {
 			nextEl: '.big-slider-next',
 			prevEl: '.big-slider-prev',
