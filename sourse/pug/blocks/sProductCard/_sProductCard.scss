@@ -838,22 +838,22 @@
 		display: block;
 		padding-bottom: 11px;
 		font-weight: 500;
-		font-size: 16px;
+		// font-size: 16px;
 		line-height: 18px;
 		color: $white;
 	}
 	.form-wrap__input{
 		background-color: #353F47;
 		border: 1px solid #808D97;
-		height: 56px;
-		line-height: 56px;
-		padding: 0 21px;
-		font-size: 16px;
+		// height: initial;
+		// line-height: 56px;
+		// padding: 16px 21px;
+	 
 		color: $white;
 		@include mt();
 		@include placeholder{
-			font-size: 16px;
-			line-height: 18px;
+			// font-size: 16px;
+			// line-height: 18px;
 			color: #616C74;
 		}
 		&:active, &:focus{
